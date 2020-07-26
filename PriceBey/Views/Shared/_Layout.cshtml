@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href= "/content/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/content/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/content/css/themify-icons.css" type="text/css">
+    <link rel="stylesheet" href="/content/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/content/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/content/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/content/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="/content/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/content/css/style.css" type="text/css">
+</head>
+<body>
+
+
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header-section">
+        <div class="header-top">
+            <div class="container">
+                <div class="ht-left">
+                    <div class="mail-service">
+                        <i class=" fa fa-envelope"></i>
+                        contact@pricebey.com
+                    </div>
+                    <div class="phone-service">
+                        <i class=" fa fa-phone"></i>
+                        +92 33379430
+                    </div>
+                </div>
+                <div class="ht-right">
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a href="/account/LogOff" class="login-panel"><i class="fa fa-sign-out"></i>Logout</a>
+                        <a href="/account/LogOff/" class="login-panel"><i class="fa fa-wrench"></i>Welcome</a>
+                    }
+                    else
+                    {
+                        <a href="/login/" class="login-panel"><i class="fa fa-sign-in"></i>Login</a>
+                        <a href="/login/" class="login-panel"><i class="fa fa-user"></i>Register</a>
+                    }
+
+
+                </div>
+           
+            </div>
+        </div>
+        <div class="container">
+            <div class="inner-header">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2">
+                        <div class="logo">
+                            <a href="/">
+                                <img src="\content\img/logo.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-7">
+                        <div class="advanced-search">
+                            <button type="button" class="category-btn">All Categories</button>
+                            <div class="input-group">
+                                <input type="text" placeholder="What do you need?">
+                                <button type="button"><i class="ti-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 text-right col-md-3">
+                        <ul class="nav-right">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+                <div class="nav-item">
+                    <div class="container" style="">
+                        <div class="nav-depart">
+                            <div class="depart-btn">
+                                <i class="ti-menu"></i>
+                                <span>All departments</span>
+                                <ul class="depart-hover">
+                                    <li class="active"><a href="#">Mobile Phones</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <nav class="nav-menu mobile-menu">
+                            <ul>
+                                <li class="active">@Html.ActionLink("Home", "index")</li>
+                                <li><a href="./shop.html">Shop</a></li>
+                                <li>
+                                    <a href="#">Collection</a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">Men's</a></li>
+                                        <li><a href="#">Women's</a></li>
+                                        <li><a href="#">Kid's</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="./blog.html">Blog</a></li>
+                                <li><a href="./contact.html">Contact</a></li>
+                                <li>
+                                    <a href="#">Pages</a>
+                                    <ul class="dropdown">
+                                        <li><a href="./blog-details.html">Blog Details</a></li>
+                                        <li><a href="./shopping-cart.html">Shopping Cart</a></li>
+                                        <li><a href="./check-out.html">Checkout</a></li>
+                                        <li><a href="./faq.html">Faq</a></li>
+                                        <li><a href="./register.html">Register</a></li>
+                                        <li><a href="/login/">Login</a></li>
+                                    </ul>
+                                </li>
+                                <li>@Html.ActionLink("About Page", "About")</li>
+                            </ul>
+                        </nav>
+                        <div id="mobile-menu-wrap"></div>
+                    </div>
+                </div>
+    </header>
+    <!-- Header End -->
+    @RenderBody()
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="footer-left">
+                        <div class="footer-logo">
+                            <a href="#"><img src="\content\img/footer-logo.png" alt=""></a>
+                        </div>
+                        <ul>
+                            <li>Address: Bosan Road, Multan</li>
+                            <li>Phone: +92 33379430</li>
+                            <li>Email: contact@pricebey.com</li>
+                        </ul>
+                        <div class="footer-social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1">
+                    <div class="footer-widget">
+                        <h5>Information</h5>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Checkout</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Serivius</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="footer-widget">
+                        <h5>My Account</h5>
+                        <ul>
+                            <li><a href="#">My Account</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Shopping Cart</a></li>
+                            <li><a href="#">Shop</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="newslatter-item">
+                        <h5>Join Our Newsletter Now</h5>
+                        <p>Get E-mail updates about our latest shop and special offers.</p>
+                        <form action="/Subscribe/Create" class="subscribe-form" method="post">
+                            <input type="text" name="email" required="" placeholder="Enter Your Mail">
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+                    
+    </footer>
+    <!-- Footer Section End -->
+    <!-- Js Plugins -->
+    <script src="/content/js/jquery-3.3.1.min.js"></script>
+    <script src="/content/js/bootstrap.min.js"></script>
+    <script src="/content/js/jquery-ui.min.js"></script>
+    <script src="/content/js/jquery.countdown.min.js"></script>
+    <script src="/content/js/jquery.nice-select.min.js"></script>
+    <script src="/content/js/jquery.zoom.min.js"></script>
+    <script src="/content/js/jquery.dd.min.js"></script>
+    <script src="/content/js/jquery.slicknav.js"></script>
+    <script src="/content/js/owl.carousel.min.js"></script>
+    <script src="/content/js/main.js"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+   

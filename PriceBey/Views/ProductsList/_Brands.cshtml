@@ -1,0 +1,7 @@
+﻿@model IEnumerable<PriceBey.Models.Brand>
+<ul class="filter-catagories">
+    @foreach (var item in Model)
+    {
+        <li><a href="/productslist/?br=@item.ID&ct=@Request.QueryString["ct"]">@item.Name</a></li>
+    }
+</ul>
