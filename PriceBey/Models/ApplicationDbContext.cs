@@ -1,19 +1,20 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Web;
 
 namespace PriceBey.Models
 {
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    //{
+    //    public ApplicationDbContext()  : base("DefaultConnection", throwIfV1Schema: false)
     {
-        public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+        public ApplicationDbContext() : base("DefaultConnection") { }
+
+        public static ApplicationDbContext Create()
         {
+            return new ApplicationDbContext();
         }
+
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<Color> Colors { get; set; }
@@ -24,9 +25,9 @@ namespace PriceBey.Models
 
         public DbSet<Subscriber> Subscribers { get; set; }
 
-        public static ApplicationDbContext Create()
-        {
-            return new ApplicationDbContext();
-        }
+        //public static ApplicationDbContext Create()
+        //{
+        //    return new ApplicationDbContext();
+        //}
     }
 }

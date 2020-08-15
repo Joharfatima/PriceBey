@@ -1,0 +1,172 @@
+﻿
+@{
+    ViewBag.Title = "Update Products Service";
+}
+
+<div class="row mb-2">
+    <div class="col-md-6" id="loader">
+
+    </div>
+    <div class="col-md-6 text-right">
+        <a href="#" id="btnUpdateAll" class="btn btn-primary btn-sm">
+            <span class="text">Update All</span>
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card shadow mb-4">
+
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Name</th>
+                                <th>Store</th>
+                                <th>Price</th>
+                                <th>Active</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section scripts {
+    <script>
+
+        var productsList = data-setbg="/content/img;
+
+        $(document).ready(function () {
+
+
+
+            getProducts();
+
+            $("div").on("click", ".link-update", function (e) {
+                e.stopPropagation();
+
+                var tr = $(this).closest("tr").eq(0);
+
+                var id = tr.attr('id');
+
+                if (id) {
+
+                    $("#loader").html('<div class="spinner-border"></div>');
+
+                    tr.css('background', '#eee68a');
+                    tr.find("button").attr('disabled', true);
+
+                    //$.get('/admin/ProductsService/updateprice', { id: id }, function (response) {
+
+                    //    tr.find(".price").eq(0).html(response.Price);
+                    //    tr.find(".active").eq(0).html(response.IsActive);
+
+                    //    tr.css('background', '#fff');
+                    //    tr.find("button").removeAttr('disabled');
+
+                    //    $("#loader").empty();
+                    //});
+
+                    $.get('/admin/ProductsService/updateprice', { id: id }).then(function (response) {
+                        tr.find(".price").eq(0).html(response.Price);
+                        tr.find(".active").eq(0).html(response.IsActive);
+
+                        tr.css('background', '#fff');
+                        tr.find("button").removeAttr('disabled');
+
+                        $("#loader").empty();
+                    });
+                }
+            });
+
+            $("div").on("click", "#btnUpdateAll", function (e) {
+                e.stopPropagation();
+
+                var ids = data-setbg="/content/img;
+
+                $(productsList).each(function (ix, item) {
+                    ids.push(item.ID);
+                });
+
+                $.get('/admin/ProductsService/UpdateAlll', { ids: ids.join() }).then(function (response) {
+                    console.log(response);
+                });
+
+                //$(productsList).each(function (ix, item) {
+
+                //    var tr = $("tr#" + item.ID).eq(0);
+
+                //    var id = item.ID;
+
+                //    if (id) {
+
+                //        $("#loader").html('<div class="spinner-border"></div>');
+
+                //        tr.css('background', '#eee68a');
+                //        tr.find("button").attr('disabled', true);
+
+                //        $.ajax({
+                //            url: '/admin/ProductsService/updateprice',
+                //            type: 'GET',
+                //            async: false,
+                //            cache: false,
+                //            data: { id: id },
+                //            error: function () {
+                //            },
+                //            success: function (response) {
+
+                //                tr.find(".price").eq(0).html(response.Price);
+                //                tr.find(".active").eq(0).html(response.IsActive);
+
+                //                tr.css('background', '#fff');
+                //                tr.find("button").removeAttr('disabled');
+
+                //                $("#loader").empty();
+                //            }
+                //        });
+
+                //    }
+
+                //});
+
+            });
+
+        });
+
+        function getProducts() {
+
+            $.get('/api/products/prices', {}, function (response) {
+
+                productsList = response;
+
+                $(response).each(function (ix, item) {
+                    var td0 = ' <td>' + item.ID + '</td>';
+                    var td1 = ' <td><a target="_blank" href="' + item.Url + '">' + item.Product.Name + '</a></td>';
+                    var td2 = ' <td>' + item.Store.Name + '</td>';
+                    var td3 = ' <td class="price">' + item.Price + '</td>';
+                    var td4 = ' <td><button type="button" class="btn btn-success btn-sm link-update"><i class="fas fa-upload"></i></button></td>';
+                    var td5 = ' <td class="active">' + item.IsActive + '</td>';
+
+                    var tr = $("<tr />", { id: item.ID }).append(td0).append(td1).append(td2).append(td3).append(td5).append(td4);
+
+                    $("#dataTable tbody").append(tr);
+
+                });
+
+                $("#dataTable").DataTable();
+            });
+        }
+    </script>
+}
+

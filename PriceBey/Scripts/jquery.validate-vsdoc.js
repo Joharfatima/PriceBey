@@ -261,10 +261,10 @@ $.extend($.validator, {
 		validClass: "valid",
 		errorElement: "label",
 		focusInvalid: true,
-		errorContainer: $( [] ),
-		errorLabelContainer: $( [] ),
+		errorContainer: $(  ),
+		errorLabelContainer: $(  ),
 		onsubmit: true,
-		ignore: [],
+		ignore: ,
 		ignoreTitle: false,
 		onfocusin: function(element) {
 			this.lastActive = element;
@@ -440,7 +440,7 @@ $.extend($.validator, {
 			if(errors) {
 				// add items to error list and map
 				$.extend( this.errorMap, errors );
-				this.errorList = [];
+				this.errorList = ;
 				for ( var name in errors ) {
 					this.errorList.push({
 						message: errors[name],
@@ -508,7 +508,7 @@ $.extend($.validator, {
 		focusInvalid: function() {
 			if( this.settings.focusInvalid ) {
 				try {
-					$(this.findLastActive() || this.errorList.length && this.errorList[0].element || [])
+					$(this.findLastActive() || this.errorList.length && this.errorList[0].element || )
 					.filter(":visible")
 					.focus()
 					// manually trigger focusin event; without it, focusin handler isn't called, findLastActive won't have anything to find
@@ -531,8 +531,8 @@ $.extend($.validator, {
 				rulesCache = {};
 			
 			// select all valid inputs inside the form (no submit or reset buttons)
-			// workaround $Query([]).add until http://dev.jquery.com/ticket/2114 is solved
-			return $([]).add(this.currentForm.elements)
+			// workaround $Query().add until http://dev.jquery.com/ticket/2114 is solved
+			return $().add(this.currentForm.elements)
 			.filter(":input")
 			.not(":submit, :reset, :image, [disabled]")
 			.not( this.settings.ignore )
@@ -557,12 +557,12 @@ $.extend($.validator, {
 		},
 		
 		reset: function() {
-			this.successList = [];
-			this.errorList = [];
+			this.successList = ;
+			this.errorList = ;
 			this.errorMap = {};
-			this.toShow = $([]);
-			this.toHide = $([]);
-			this.currentElements = $([]);
+			this.toShow = $();
+			this.toHide = $();
+			this.currentElements = $();
 		},
 		
 		prepareForm: function() {

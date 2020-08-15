@@ -100,7 +100,7 @@
   }
 
   function _iterableToArrayLimit(arr, i) {
-    var _arr = [];
+    var _arr = ;
     var _n = true;
     var _d = false;
     var _e = undefined;
@@ -280,10 +280,10 @@
   if (!w[NAMESPACE_IDENTIFIER]) w[NAMESPACE_IDENTIFIER] = {};
   if (!w[NAMESPACE_IDENTIFIER].styles) w[NAMESPACE_IDENTIFIER].styles = {};
   if (!w[NAMESPACE_IDENTIFIER].hooks) w[NAMESPACE_IDENTIFIER].hooks = {};
-  if (!w[NAMESPACE_IDENTIFIER].shims) w[NAMESPACE_IDENTIFIER].shims = [];
+  if (!w[NAMESPACE_IDENTIFIER].shims) w[NAMESPACE_IDENTIFIER].shims = ;
   var namespace = w[NAMESPACE_IDENTIFIER];
 
-  var functions = [];
+  var functions = ;
 
   var listener = function listener() {
     DOCUMENT.removeEventListener('DOMContentLoaded', listener);
@@ -314,7 +314,7 @@
 
   var isNode = typeof global !== 'undefined' && typeof global.process !== 'undefined' && typeof global.process.emit === 'function';
   var asyncSetTimer = typeof setImmediate === 'undefined' ? setTimeout : setImmediate;
-  var asyncQueue = [];
+  var asyncQueue = ;
   var asyncTimer;
 
   function asyncFlush() {
@@ -324,7 +324,7 @@
     } // reset async asyncQueue
 
 
-    asyncQueue = [];
+    asyncQueue = ;
     asyncTimer = false;
   }
 
@@ -481,7 +481,7 @@
       throw new TypeError('Failed to construct \'Promise\': Please use the \'new\' operator, this object constructor cannot be called as a function.');
     }
 
-    this._then = [];
+    this._then = ;
     invokeResolver(resolver, this);
   }
 
@@ -528,7 +528,7 @@
     }
 
     return new P(function (resolve, reject) {
-      var results = [];
+      var results = ;
       var remaining = 0;
 
       function resolver(index) {
@@ -652,9 +652,9 @@
     return id;
   }
   function toArray(obj) {
-    var array = [];
+    var array = ;
 
-    for (var i = (obj || []).length >>> 0; i--;) {
+    for (var i = (obj || ).length >>> 0; i--;) {
       array[i] = obj[i];
     }
 
@@ -950,7 +950,7 @@
       return extra.classes.indexOf(c) === -1;
     }).concat(extra.classes).join(' ');
     var content = {
-      children: [],
+      children: ,
       attributes: _objectSpread({}, extra.attributes, {
         'data-prefix': prefix,
         'data-icon': iconName,
@@ -1034,7 +1034,7 @@
       attributes['style'] = styleString;
     }
 
-    var val = [];
+    var val = ;
     val.push({
       tag: 'span',
       attributes: attributes,
@@ -1070,7 +1070,7 @@
       attributes['style'] = styleString;
     }
 
-    var val = [];
+    var val = ;
     val.push({
       tag: 'span',
       attributes: attributes,
@@ -1273,7 +1273,7 @@
     return {
       prefix: null,
       iconName: null,
-      rest: []
+      rest: 
     };
   };
   function getCanonicalIcon(values) {
@@ -1310,7 +1310,7 @@
         _abstractNodes$attrib = abstractNodes.attributes,
         attributes = _abstractNodes$attrib === void 0 ? {} : _abstractNodes$attrib,
         _abstractNodes$childr = abstractNodes.children,
-        children = _abstractNodes$childr === void 0 ? [] : _abstractNodes$childr;
+        children = _abstractNodes$childr === void 0 ?  : _abstractNodes$childr;
 
     if (typeof abstractNodes === 'string') {
       return htmlEscape(abstractNodes);
@@ -1371,8 +1371,8 @@
 
         return acc;
       }, {
-        toNode: [],
-        toSvg: []
+        toNode: ,
+        toSvg: 
       });
       abstract[0].attributes.class = splitClasses.toSvg.join(' ');
       var newInnerHTML = abstract.map(function (a) {
@@ -1475,7 +1475,7 @@
 
   function styleParser (node) {
     var style = node.getAttribute('style');
-    var val = [];
+    var val = ;
 
     if (style) {
       val = style.split(';').reduce(function (acc, style) {
@@ -1634,7 +1634,7 @@
       symbol: false,
       mask: null,
       extra: {
-        classes: [],
+        classes: ,
         styles: {},
         attributes: {}
       }
@@ -1911,7 +1911,7 @@
       return;
     }
 
-    var candidates = [];
+    var candidates = ;
 
     try {
       candidates = toArray(root.querySelectorAll(prefixesDomQuery));
@@ -1942,7 +1942,7 @@
       }
 
       return acc;
-    }, []);
+    }, );
     return new picked(function (resolve, reject) {
       picked.all(mutations).then(function (resolvedMutations) {
         perform(resolvedMutations, function () {
@@ -2267,7 +2267,7 @@
         _params$title = params.title,
         title = _params$title === void 0 ? null : _params$title,
         _params$classes = params.classes,
-        classes = _params$classes === void 0 ? [] : _params$classes,
+        classes = _params$classes === void 0 ?  : _params$classes,
         _params$attributes = params.attributes,
         attributes = _params$attributes === void 0 ? {} : _params$attributes,
         _params$styles = params.styles,
@@ -2320,7 +2320,7 @@
         _params$title2 = params.title,
         title = _params$title2 === void 0 ? null : _params$title2,
         _params$classes2 = params.classes,
-        classes = _params$classes2 === void 0 ? [] : _params$classes2,
+        classes = _params$classes2 === void 0 ?  : _params$classes2,
         _params$attributes2 = params.attributes,
         attributes = _params$attributes2 === void 0 ? {} : _params$attributes2,
         _params$styles2 = params.styles,
@@ -2347,7 +2347,7 @@
     var _params$title3 = params.title,
         title = _params$title3 === void 0 ? null : _params$title3,
         _params$classes3 = params.classes,
-        classes = _params$classes3 === void 0 ? [] : _params$classes3,
+        classes = _params$classes3 === void 0 ?  : _params$classes3,
         _params$attributes3 = params.attributes,
         attributes = _params$attributes3 === void 0 ? {} : _params$attributes3,
         _params$styles3 = params.styles,
@@ -2371,12 +2371,12 @@
   var layer = function layer(assembler) {
     var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
     var _params$classes4 = params.classes,
-        classes = _params$classes4 === void 0 ? [] : _params$classes4;
+        classes = _params$classes4 === void 0 ?  : _params$classes4;
     return apiObject({
       type: 'layer'
     }, function () {
       ensureCss();
-      var children = [];
+      var children = ;
       assembler(function (args) {
         Array.isArray(args) ? args.map(function (a) {
           children = children.concat(a.abstract);

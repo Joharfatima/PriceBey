@@ -169,7 +169,7 @@
     }
 
     $jQval.unobtrusive = {
-        adapters: [],
+        adapters: ,
 
         parseElement: function (element, skipAttach) {
             /// <summary>
@@ -266,7 +266,7 @@
         /// <returns type="jQuery.validator.unobtrusive.adapters" />
         if (!fn) {  // Called with no params, just a function
             fn = params;
-            params = [];
+            params = ;
         }
         this.push({ name: adapterName, params: params, adapt: fn });
         return this;

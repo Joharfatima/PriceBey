@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HtmlAgilityPack, Version=1.11.24.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.24\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -101,6 +104,9 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -182,10 +188,12 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Areas\Admin\Controllers\BrandsController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\ColorsController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -193,38 +201,13 @@
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Controllers\ProductDetailController.cs" />
     <Compile Include="Controllers\ProductsListController.cs" />
-    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Areas\Admin\Controllers\StoresController.cs" />
     <Compile Include="Controllers\SubscribeController.cs" />
+    <Compile Include="Controllers\TermsController.cs" />
     <Compile Include="DataContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202005161048177_init.cs" />
-    <Compile Include="Migrations\202005161048177_init.Designer.cs">
-      <DependentUpon>202005161048177_init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202005161153426_init1.cs" />
-    <Compile Include="Migrations\202005161153426_init1.Designer.cs">
-      <DependentUpon>202005161153426_init1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202005311251515_AddRegisterTable.cs" />
-    <Compile Include="Migrations\202005311251515_AddRegisterTable.Designer.cs">
-      <DependentUpon>202005311251515_AddRegisterTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006071716416_init2.cs" />
-    <Compile Include="Migrations\202006071716416_init2.Designer.cs">
-      <DependentUpon>202006071716416_init2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007201920579_init3.cs" />
-    <Compile Include="Migrations\202007201920579_init3.Designer.cs">
-      <DependentUpon>202007201920579_init3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007241824355_init4.cs" />
-    <Compile Include="Migrations\202007241824355_init4.Designer.cs">
-      <DependentUpon>202007241824355_init4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Brand.cs" />
@@ -234,10 +217,21 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductPrice.cs" />
-    <Compile Include="Models\Register.cs" />
     <Compile Include="Models\Store.cs" />
     <Compile Include="Models\Subscriber.cs" />
     <Compile Include="MyFirstTable.cs" />
+    <Compile Include="PriceUpdater\Daraz.cs" />
+    <Compile Include="PriceUpdater\DownloadHTML.cs" />
+    <Compile Include="PriceUpdater\Goto.cs" />
+    <Compile Include="PriceUpdater\Homeshop.cs" />
+    <Compile Include="PriceUpdater\iShop.cs" />
+    <Compile Include="PriceUpdater\Mega.cs" />
+    <Compile Include="PriceUpdater\Myshop.cs" />
+    <Compile Include="PriceUpdater\PriceOye.cs" />
+    <Compile Include="PriceUpdater\Shophive.cs" />
+    <Compile Include="PriceUpdater\Symbios.cs" />
+    <Compile Include="PriceUpdater\Telemart.cs" />
+    <Compile Include="PriceUpdater\W11stop.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registration.aspx.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
@@ -2156,6 +2150,7 @@
     <Content Include="Content\admin\vendor\jquery\jquery.min.map" />
     <Content Include="Content\admin\vendor\jquery\jquery.slim.min.map" />
     <Content Include="Content\img\powerbank.webp" />
+    <Content Include="Areas\Admin\Views\ProductsService\Index %281%29.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2167,6 +2162,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="StoreLogos\12\Priceoye 1.png" />
+    <Content Include="StoreLogos\12\priceoye.PNG" />
+    <Content Include="StoreLogos\4\goto 1.png" />
     <Content Include="StoreLogos\6\Shophive.jpg" />
     <Content Include="StoreLogos\8\mega.pk.png" />
     <Content Include="StoreLogos\10\symbios1.png" />
@@ -2188,8 +2186,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -2242,7 +2238,6 @@
     <Content Include="Areas\Admin\Views\Products\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Products\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
-    <Content Include="Views\Register\Index.cshtml" />
     <Content Include="Views\Home\_Products.cshtml" />
     <Content Include="Views\Shared\PartialView.cshtml" />
     <Content Include="Views\ProductsList\Index.cshtml" />
@@ -2250,6 +2245,9 @@
     <Content Include="Views\ProductsList\_Brands.cshtml" />
     <Content Include="Views\ProductsList\_Products.cshtml" />
     <Content Include="Views\ProductDetail\Index.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Terms\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2270,26 +2268,6 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202005161048177_init.resx">
-      <DependentUpon>202005161048177_init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202005161153426_init1.resx">
-      <DependentUpon>202005161153426_init1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202005311251515_AddRegisterTable.resx">
-      <DependentUpon>202005311251515_AddRegisterTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006071716416_init2.resx">
-      <DependentUpon>202006071716416_init2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007201920579_init3.resx">
-      <DependentUpon>202007201920579_init3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007241824355_init4.resx">
-      <DependentUpon>202007241824355_init4.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

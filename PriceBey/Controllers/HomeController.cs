@@ -1,8 +1,5 @@
 ﻿using PriceBey.Models;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace PriceBey.Controllers
@@ -15,15 +12,15 @@ namespace PriceBey.Controllers
         {
             return View();
         }
-
-        public ActionResult About()
+        public ActionResult Contact()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "";
 
             return View();
         }
 
-        public ActionResult Contact()
+
+        public ActionResult Terms()
         {
             ViewBag.Message = "";
 
@@ -32,11 +29,12 @@ namespace PriceBey.Controllers
 
         public ActionResult Products(int id)
         {
-            var data = db.Products.Include("Category").Include("Prices")
-                .Where(a => a.CategoryId == id && a.Prices.Count> 0).Take(5).ToList();
+            var data = db.Products.Include("Category").Include("Prices").Include("Prices.Store")
+                .Where(a => a.CategoryId == id && a.Prices.Count > 0).Take(8).ToList();
 
             return PartialView("_Products", data);
         }
-       
+
+
     }
 }

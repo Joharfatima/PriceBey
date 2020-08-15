@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using PriceBey.Models;
+using System;
 using System.Web.Mvc;
-using PriceBey.Models;
 
 namespace PriceBey.Controllers
 {
@@ -16,7 +13,7 @@ namespace PriceBey.Controllers
             var email = Convert.ToString(collection["email"]);
             int result = 0;
 
-            if(!string.IsNullOrEmpty(email))
+            if (!string.IsNullOrEmpty(email))
             {
                 using (var context = new ApplicationDbContext())
                 {

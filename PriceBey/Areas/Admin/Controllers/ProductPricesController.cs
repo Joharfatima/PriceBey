@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using PriceBey.Models;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using PriceBey.Models;
 
 namespace PriceBey.Areas.Admin.Controllers
 {
@@ -17,7 +14,7 @@ namespace PriceBey.Areas.Admin.Controllers
         // GET: ProductPrices
         public ActionResult Index()
         {
-            var productPrices = db.ProductPrices.Include(p => p.Product).Include(p => p.Store).OrderBy(a=>a.ProductId);
+            var productPrices = db.ProductPrices.Include(p => p.Product).Include(p => p.Store).OrderBy(a => a.ProductId);
             return View(productPrices.ToList());
         }
 

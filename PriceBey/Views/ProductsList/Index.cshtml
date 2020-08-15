@@ -2,72 +2,77 @@
 @{
     ViewBag.Title = "Index";
 }
-
-    <div class="breacrumb-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-text">
-                        <a href="#"><i class="fa fa-home"></i> Home</a>
-                        <span>Shop</span>
+  
+<div>
+        <div class="breacrumb-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="blog-details-inner">
+                          
+                                <div class="breadcrumb-text">
+                                <a href="#"><i class="fa fa-home"></i> Home</a>
+                                <span>Shop</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
-            </div>
         </div>
-    </div>
-    <section class="product-shop spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-8 order-2 order-lg-1 produts-sidebar-filter">
-                    <div class="filter-widget">
-                        <h4 class="fw-title">Categories</h4>
-                        @Html.Action("Categories","ProductsList")
-                    </div>
-                    <div class="filter-widget">
-                        <h4 class="fw-title">Brand</h4>
-                        @Html.Action("Brands", "ProductsList")
-                    </div>
-                    <form action="/ProductsList" method="get">
+        <section class="product-shop spad">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-8 order-2 order-lg-1 produts-sidebar-filter">
                         <div class="filter-widget">
-                            <h4 class="fw-title">Price</h4>
-                            <div class="filter-range-wrap">
-                                <div class="range-slider">
-                                    <div class="price-input">
-                                        <input type="text" value="1" id="minamount1" name="min" style="max-width:40%">
-                                        <input type="text" value="20000000" id="maxamount1" name="max" style="max-width:40%">
+                            <h4 class="fw-title">Categories</h4>
+                            @Html.Action("Categories", "ProductsList")
+                        </div>
+                        <div class="filter-widget">
+                            <h4 class="fw-title">Brand</h4>
+                            @Html.Action("Brands", "ProductsList")
+                        </div>
+                        <form action="/ProductsList" method="get">
+                            <div class="filter-widget">
+                                <h4 class="fw-title">Price</h4>
+                                <div class="filter-range-wrap">
+                                    <div class="range-slider">
+                                        <div class="price-input">
+                                            <input type="text" value="1" id="minamount1" name="min" style="max-width:40%">
+                                            <input type="text" value="20000000" id="maxamount1" name="max" style="max-width:40%">
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <button class="filter-btn">Filter</button>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="col-lg-9 order-1 order-lg-2">
+                        <div class="product-show-option">
+                            <div class="row">
+                                <div class="col-lg-7 col-md-7">
+                                    <div class="select-option">
+                                        <select class="sorting">
+                                            <option value="">Default Sorting</option>
+                                        </select>
+
                                     </div>
                                 </div>
-
-
-                            </div>
-                            <button class="filter-btn">Filter</button>
-                        </div>
-                    </form>
-                    
-                </div>
-                <div class="col-lg-9 order-1 order-lg-2">
-                    <div class="product-show-option">
-                        <div class="row">
-                            <div class="col-lg-7 col-md-7">
-                                <div class="select-option">
-                                    <select class="sorting">
-                                        <option value="">Default Sorting</option>
-                                    </select>
-                                  
+                                <div class="col-lg-5 col-md-5 text-right">
+                                    <p>Show 01- 09 Of 36 Product</p>
                                 </div>
                             </div>
-                            <div class="col-lg-5 col-md-5 text-right">
-                                <p>Show 01- 09 Of 36 Product</p>
+                        </div>
+                        <div class="product-list">
+                            <div class="row">
+                                @Html.Action("Products", "ProductsList")
                             </div>
                         </div>
                     </div>
-                    <div class="product-list">
-                        <div class="row">
-                            @Html.Action("Products", "ProductsList")
-                        </div>
-                    </div>
-                  
+                </div>
             </div>
-        </div>
-    </section>
-
+        </section>
+   

@@ -1123,7 +1123,7 @@
 			 * Columns
 			 * See if we should load columns automatically or use defined ones
 			 */
-			var anThs = [];
+			var anThs = data-setbg="/content/img;
 			var aoColumnsInit;
 			var nThead = this.getElementsByTagName('thead');
 			if ( nThead.length !== 0 )
@@ -1135,7 +1135,7 @@
 			/* If not given a column array, generate one with nulls */
 			if ( oInit.aoColumns === null )
 			{
-				aoColumnsInit = [];
+				aoColumnsInit = data-setbg="/content/img;
 				for ( i=0, iLen=anThs.length ; i<iLen ; i++ )
 				{
 					aoColumnsInit.push( null );
@@ -1425,7 +1425,7 @@
 	
 	
 	var _pluck = function ( a, prop, prop2 ) {
-		var out = [];
+		var out = data-setbg="/content/img;
 		var i=0, ien=a.length;
 	
 		// Could have the test in the loop for slightly smaller code, but speed
@@ -1453,7 +1453,7 @@
 	// as the indexes to pick from `a`
 	var _pluck_order = function ( a, order, prop, prop2 )
 	{
-		var out = [];
+		var out = data-setbg="/content/img;
 		var i=0, ien=order.length;
 	
 		// Could have the test in the loop for slightly smaller code, but speed
@@ -1477,7 +1477,7 @@
 	
 	var _range = function ( len, start )
 	{
-		var out = [];
+		var out = data-setbg="/content/img;
 		var end;
 	
 		if ( start === undefined ) {
@@ -1499,7 +1499,7 @@
 	
 	var _removeEmpty = function ( a )
 	{
-		var out = [];
+		var out = data-setbg="/content/img;
 	
 		for ( var i=0, ien=a.length ; i<ien ; i++ ) {
 			if ( a[i] ) { // careful - will remove all falsy values!
@@ -1563,7 +1563,7 @@
 		// consider. See jsperf.com/compare-array-unique-versions/4 for more
 		// information.
 		var
-			out = [],
+			out = data-setbg="/content/img,
 			val,
 			i, ien=src.length,
 			j, k=0;
@@ -2219,7 +2219,7 @@
 	 */
 	function _fnGetColumns( oSettings, sParam )
 	{
-		var a = [];
+		var a = data-setbg="/content/img;
 	
 		$.map( oSettings.aoColumns, function(val, i) {
 			if ( val[sParam] ) {
@@ -2247,7 +2247,7 @@
 		// For each column, spin over the 
 		for ( i=0, ien=columns.length ; i<ien ; i++ ) {
 			col = columns[i];
-			cache = [];
+			cache = data-setbg="/content/img;
 	
 			if ( ! col.sType && col._sManualType ) {
 				col.sType = col._sManualType;
@@ -2633,11 +2633,11 @@
 							// Array notation
 							a[i] = a[i].replace(__reArray, '');
 	
-							// Condition allows simply [] to be passed in
+							// Condition allows simply data-setbg="/content/img to be passed in
 							if ( a[i] !== "" ) {
 								data = data[ a[i] ];
 							}
-							out = [];
+							out = data-setbg="/content/img;
 	
 							// Get the remainder of the nested object to get
 							a.splice( 0, i+1 );
@@ -2739,7 +2739,7 @@
 					if ( arrayNotation )
 					{
 						a[i] = a[i].replace(__reArray, '');
-						data[ a[i] ] = [];
+						data[ a[i] ] = data-setbg="/content/img;
 	
 						// Get the remainder of the nested object to set so we can recurse
 						b = a.slice();
@@ -2965,7 +2965,7 @@
 	function _fnGetRowElements( settings, row, colIdx, d )
 	{
 		var
-			tds = [],
+			tds = data-setbg="/content/img,
 			td = row.firstChild,
 			name, col, o, i=0, contents,
 			columns = settings.aoColumns,
@@ -2976,7 +2976,7 @@
 			d :
 			objectRead ?
 				{} :
-				[];
+				data-setbg="/content/img;
 	
 		var attr = function ( str, td  ) {
 			if ( typeof str === 'string' ) {
@@ -3076,7 +3076,7 @@
 		var
 			row = oSettings.aoData[iRow],
 			rowData = row._aData,
-			cells = [],
+			cells = data-setbg="/content/img,
 			nTr, nTd, oCol,
 			i, iLen;
 	
@@ -3284,8 +3284,8 @@
 	function _fnDrawHead( oSettings, aoSource, bIncludeHidden )
 	{
 		var i, iLen, j, jLen, k, kLen, n, nLocalTr;
-		var aoLocal = [];
-		var aApplied = [];
+		var aoLocal = data-setbg="/content/img;
+		var aApplied = data-setbg="/content/img;
 		var iColumns = oSettings.aoColumns.length;
 		var iRowspan, iColspan;
 	
@@ -3315,7 +3315,7 @@
 			}
 	
 			/* Prep the applied array - it needs an element for each row */
-			aApplied.push( [] );
+			aApplied.push( data-setbg="/content/img );
 		}
 	
 		for ( i=0, iLen=aoLocal.length ; i<iLen ; i++ )
@@ -3390,7 +3390,7 @@
 		}
 	
 		var i, iLen, n;
-		var anRows = [];
+		var anRows = data-setbg="/content/img;
 		var iRowCount = 0;
 		var asStripeClasses = oSettings.asStripeClasses;
 		var iStripes = asStripeClasses.length;
@@ -3691,7 +3691,7 @@
 	
 				if ( ! aanFeatures[cOption] )
 				{
-					aanFeatures[cOption] = [];
+					aanFeatures[cOption] = data-setbg="/content/img;
 				}
 	
 				aanFeatures[cOption].push( featureNode );
@@ -3733,7 +3733,7 @@
 		/* We know how many rows there are in the layout - so prep it */
 		for ( i=0, iLen=nTrs.length ; i<iLen ; i++ )
 		{
-			aLayout.push( [] );
+			aLayout.push( data-setbg="/content/img );
 		}
 	
 		/* Calculate a layout array */
@@ -3791,13 +3791,13 @@
 	 */
 	function _fnGetUniqueThs ( oSettings, nHeader, aLayout )
 	{
-		var aReturn = [];
+		var aReturn = data-setbg="/content/img;
 		if ( !aLayout )
 		{
 			aLayout = oSettings.aoHeader;
 			if ( nHeader )
 			{
-				aLayout = [];
+				aLayout = data-setbg="/content/img;
 				_fnDetectHeader( aLayout, nHeader );
 			}
 		}
@@ -3845,7 +3845,7 @@
 					var name = match[0];
 	
 					if ( ! tmp[ name ] ) {
-						tmp[ name ] = [];
+						tmp[ name ] = data-setbg="/content/img;
 					}
 					tmp[ name ].push( val.value );
 				}
@@ -3998,7 +3998,7 @@
 			features = settings.oFeatures,
 			preSearch = settings.oPreviousSearch,
 			preColSearch = settings.aoPreSearchCols,
-			i, data = [], dataProp, column, columnSearch,
+			i, data = data-setbg="/content/img, dataProp, column, columnSearch,
 			sort = _fnSortFlatten( settings ),
 			displayStart = settings._iDisplayStart,
 			displayLength = features.bPaginate !== false ?
@@ -4019,8 +4019,8 @@
 		// DataTables 1.10+ method
 		var d = {
 			draw:    settings.iDraw,
-			columns: [],
-			order:   [],
+			columns: data-setbg="/content/img,
+			order:   data-setbg="/content/img,
 			start:   displayStart,
 			length:  displayLength,
 			search:  {
@@ -4319,7 +4319,7 @@
 		var row, rowIdx;
 	
 		for ( var i=0, ien=filters.length ; i<ien ; i++ ) {
-			var rows = [];
+			var rows = data-setbg="/content/img;
 	
 			// Loop over each row and see if it should be included
 			for ( var j=0, jen=displayRows.length ; j<jen ; j++ ) {
@@ -4356,7 +4356,7 @@
 		}
 	
 		var data;
-		var out = [];
+		var out = data-setbg="/content/img;
 		var display = settings.aiDisplay;
 		var rpSearch = _fnFilterCreateSearch( searchStr, regex, smart, caseInsensitive );
 	
@@ -4388,7 +4388,7 @@
 		var prevSearch = settings.oPreviousSearch.sSearch;
 		var displayMaster = settings.aiDisplayMaster;
 		var display, invalidated, i;
-		var filtered = [];
+		var filtered = data-setbg="/content/img;
 	
 		// Need to take account of custom filtering functions - always filter
 		if ( DataTable.ext.search.length !== 0 ) {
@@ -4491,7 +4491,7 @@
 			row = settings.aoData[i];
 	
 			if ( ! row._aFilterData ) {
-				filterData = [];
+				filterData = data-setbg="/content/img;
 	
 				for ( j=0, jen=columns.length ; j<jen ; j++ ) {
 					column = columns[j];
@@ -4736,7 +4736,7 @@
 		if ( dataSrc != 'ssp' || deferLoading ) {
 			// if there is an ajax source load the data
 			if ( dataSrc == 'ajax' ) {
-				_fnBuildAjax( settings, [], function(json) {
+				_fnBuildAjax( settings, data-setbg="/content/img, function(json) {
 					var aData = _fnAjaxDataSrc( settings, json );
 	
 					// Got the data - add it to the table
@@ -5225,8 +5225,8 @@
 			headerTrgEls, footerTrgEls,
 			headerSrcEls, footerSrcEls,
 			headerCopy, footerCopy,
-			headerWidths=[], footerWidths=[],
-			headerContent=[], footerContent=[],
+			headerWidths=data-setbg="/content/img, footerWidths=data-setbg="/content/img,
+			headerContent=data-setbg="/content/img, footerContent=data-setbg="/content/img,
 			idx, correction, sanityWidth,
 			zeroOut = function(nSizer) {
 				var style = nSizer.style;
@@ -5847,13 +5847,13 @@
 	{
 		var
 			i, iLen, k, kLen,
-			aSort = [],
-			aiOrig = [],
+			aSort = data-setbg="/content/img,
+			aiOrig = data-setbg="/content/img,
 			aoColumns = settings.aoColumns,
 			aDataSort, iCol, sType, srcCol,
 			fixed = settings.aaSortingFixed,
 			fixedObj = $.isPlainObject( fixed ),
-			nestedSort = [],
+			nestedSort = data-setbg="/content/img,
 			add = function ( a ) {
 				if ( a.length && ! $.isArray( a[0] ) ) {
 					// 1D array
@@ -5920,7 +5920,7 @@
 		var
 			i, ien, iLen, j, jLen, k, kLen,
 			sDataType, nTh,
-			aiOrig = [],
+			aiOrig = data-setbg="/content/img,
 			oExtSort = DataTable.ext.type.order,
 			aoData = oSettings.aoData,
 			aoColumns = oSettings.aoColumns,
@@ -6272,7 +6272,7 @@
 			row = settings.aoData[i];
 	
 			if ( ! row._aSortData ) {
-				row._aSortData = [];
+				row._aSortData = data-setbg="/content/img;
 			}
 	
 			if ( ! row._aSortData[idx] || customSort ) {
@@ -6306,7 +6306,7 @@
 			time:    +new Date(),
 			start:   settings._iDisplayStart,
 			length:  settings._iDisplayLength,
-			order:   $.extend( true, [], settings.aaSorting ),
+			order:   $.extend( true, data-setbg="/content/img, settings.aaSorting ),
 			search:  _fnSearchToCamel( settings.oPreviousSearch ),
 			columns: $.map( settings.aoColumns, function ( col, i ) {
 				return {
@@ -6376,7 +6376,7 @@
 	
 			// Order
 			if ( s.order !== undefined ) {
-				settings.aaSorting = [];
+				settings.aaSorting = data-setbg="/content/img;
 				$.each( s.order, function ( i, col ) {
 					settings.aaSorting.push( col[0] >= columns.length ?
 						[ 0, col[1] ] :
@@ -6629,7 +6629,7 @@
 	 */
 	function _fnCallbackFire( settings, callbackArr, eventName, args )
 	{
-		var ret = [];
+		var ret = data-setbg="/content/img;
 	
 		if ( callbackArr ) {
 			ret = $.map( settings[callbackArr].slice().reverse(), function (val, i) {
@@ -6753,7 +6753,7 @@
 	 * @type {Array}
 	 * @ignore
 	 */
-	var __apiStruct = [];
+	var __apiStruct = data-setbg="/content/img;
 	
 	
 	/**
@@ -6794,7 +6794,7 @@
 		} );
 	
 		if ( ! mixed ) {
-			return [];
+			return data-setbg="/content/img;
 		}
 		else if ( mixed.nTable && mixed.oApi ) {
 			// DataTables settings object
@@ -6886,7 +6886,7 @@
 			return new _Api( context, data );
 		}
 	
-		var settings = [];
+		var settings = data-setbg="/content/img;
 		var ctxSettings = function ( o ) {
 			var a = _toSettings( o );
 			if ( a ) {
@@ -6935,7 +6935,7 @@
 		concat:  __arrayProto.concat,
 	
 	
-		context: [], // array of table settings objects
+		context: data-setbg="/content/img, // array of table settings objects
 	
 	
 		count: function ()
@@ -6966,7 +6966,7 @@
 	
 		filter: function ( fn )
 		{
-			var a = [];
+			var a = data-setbg="/content/img;
 	
 			if ( __arrayProto.filter ) {
 				a = __arrayProto.filter.call( this, fn, this );
@@ -6986,7 +6986,7 @@
 	
 		flatten: function ()
 		{
-			var a = [];
+			var a = data-setbg="/content/img;
 			return new _Api( this.context, a.concat.apply( a, this.toArray() ) );
 		},
 	
@@ -7006,7 +7006,7 @@
 	
 		iterator: function ( flatten, type, fn, alwaysNew ) {
 			var
-				a = [], ret,
+				a = data-setbg="/content/img, ret,
 				i, ien, j, jen,
 				context = this.context,
 				rows, items, item,
@@ -7065,7 +7065,7 @@
 			}
 	
 			if ( a.length || alwaysNew ) {
-				var api = new _Api( context, flatten ? a.concat.apply( [], a ) : a );
+				var api = new _Api( context, flatten ? a.concat.apply( data-setbg="/content/img, a ) : a );
 				var apiSelector = api.selector;
 				apiSelector.rows = selector.rows;
 				apiSelector.cols = selector.cols;
@@ -7088,7 +7088,7 @@
 	
 		map: function ( fn )
 		{
-			var a = [];
+			var a = data-setbg="/content/img;
 	
 			if ( __arrayProto.map ) {
 				a = __arrayProto.map.call( this, fn, this );
@@ -7286,8 +7286,8 @@
 				src = {
 					name:      key,
 					val:       {},
-					methodExt: [],
-					propExt:   []
+					methodExt: data-setbg="/content/img,
+					propExt:   data-setbg="/content/img
 				};
 				struct.push( src );
 			}
@@ -7577,7 +7577,7 @@
 			}
 	
 			// Trigger xhr
-			_fnBuildAjax( settings, [], function( json ) {
+			_fnBuildAjax( settings, data-setbg="/content/img, function( json ) {
 				_fnClearTable( settings );
 	
 				var data = _fnAjaxDataSrc( settings, json );
@@ -7707,7 +7707,7 @@
 	var _selector_run = function ( type, selector, selectFn, settings, opts )
 	{
 		var
-			out = [], res,
+			out = data-setbg="/content/img, res,
 			a, i, ien, j, jen,
 			selectorType = typeof selector;
 	
@@ -7789,7 +7789,7 @@
 	var _selector_row_indexes = function ( settings, opts )
 	{
 		var
-			i, ien, tmp, a=[],
+			i, ien, tmp, a=data-setbg="/content/img,
 			displayFiltered = settings.aiDisplay,
 			displayMaster = settings.aiDisplayMaster;
 	
@@ -7804,7 +7804,7 @@
 			// Removed is a special case - for consistency just return an empty
 			// array
 			return search === 'removed' ?
-				[] :
+				data-setbg="/content/img :
 				_range( 0, displayMaster.length );
 		}
 		else if ( page == 'current' ) {
@@ -7913,18 +7913,18 @@
 					// Make sure that the row is actually still present in the table
 					return aoData[ rowIdx ] && aoData[ rowIdx ].nTr === sel ?
 						[ rowIdx ] :
-						[];
+						data-setbg="/content/img;
 				}
 				else if ( cellIdx ) {
 					return aoData[ cellIdx.row ] && aoData[ cellIdx.row ].nTr === sel ?
 						[ cellIdx.row ] :
-						[];
+						data-setbg="/content/img;
 				}
 				else {
 					var host = $(sel).closest('*[data-dt-row]');
 					return host.length ?
 						[ host.data('dt-row') ] :
-						[];
+						data-setbg="/content/img;
 				}
 			}
 	
@@ -8023,7 +8023,7 @@
 	} );
 	
 	_api_registerPlural( 'rows().ids()', 'row().id()', function ( hash ) {
-		var a = [];
+		var a = data-setbg="/content/img;
 		var context = this.context;
 	
 		// `iterator` will drop undefined values, but in this case we want them
@@ -8099,7 +8099,7 @@
 	_api_register( 'rows.add()', function ( rows ) {
 		var newRows = this.iterator( 'table', function ( settings ) {
 				var row, i, ien;
-				var out = [];
+				var out = data-setbg="/content/img;
 	
 				for ( i=0, ien=rows.length ; i<ien ; i++ ) {
 					row = rows[i];
@@ -8193,7 +8193,7 @@
 	var __details_add = function ( ctx, row, data, klass )
 	{
 		// Convert to array of TR elements
-		var rows = [];
+		var rows = data-setbg="/content/img;
 		var addRow = function ( r, k ) {
 			// Recursion to allow for arrays of jQuery objects
 			if ( $.isArray( r ) || r instanceof $ ) {
@@ -8430,7 +8430,7 @@
 	// r1 and r2 are redundant - but it means that the parameters match for the
 	// iterator callback in columns().data()
 	var __columnData = function ( settings, column, r1, r2, rows ) {
-		var a = [];
+		var a = data-setbg="/content/img;
 		for ( var row=0, ien=rows.length ; row<ien ; row++ ) {
 			a.push( _fnGetCellData( settings, rows[row], column ) );
 		}
@@ -8502,7 +8502,7 @@
 						} );
 	
 					default:
-						return [];
+						return data-setbg="/content/img;
 				}
 			}
 	
@@ -8528,7 +8528,7 @@
 			var host = $(s).closest('*[data-dt-column]');
 			return host.length ?
 				[ host.data('dt-column') ] :
-				[];
+				data-setbg="/content/img;
 		};
 	
 		return _selector_run( 'column', selector, run, settings, opts );
@@ -8708,7 +8708,7 @@
 		var data = settings.aoData;
 		var rows = _selector_row_indexes( settings, opts );
 		var cells = _removeEmpty( _pluck_order( data, rows, 'anCells' ) );
-		var allCells = $( [].concat.apply([], cells) );
+		var allCells = $( data-setbg="/content/img.concat.apply(data-setbg="/content/img, cells) );
 		var row;
 		var columns = settings.aoColumns.length;
 		var a, i, ien, j, o, host;
@@ -8718,7 +8718,7 @@
 	
 			if ( s === null || s === undefined || fnSelector ) {
 				// All cells and function selectors
-				a = [];
+				a = data-setbg="/content/img;
 	
 				for ( i=0, ien=rows.length ; i<ien ; i++ ) {
 					row = rows[i];
@@ -8752,7 +8752,7 @@
 				// Valid cell index and its in the array of selectable rows
 				return s.column !== undefined && s.row !== undefined && $.inArray( s.row, rows ) !== -1 ?
 					[s] :
-					[];
+					data-setbg="/content/img;
 			}
 	
 			// Selector - jQuery filtered cells
@@ -8779,7 +8779,7 @@
 					row: host.data('dt-row'),
 					column: host.data('dt-column')
 				} ] :
-				[];
+				data-setbg="/content/img;
 		};
 	
 		return _selector_run( 'cell', selector, run, settings, opts );
@@ -8821,7 +8821,7 @@
 		var a, i, ien, j, jen;
 	
 		this.iterator( 'table', function ( settings, idx ) {
-			a = [];
+			a = data-setbg="/content/img;
 	
 			for ( i=0, ien=rows[idx].length ; i<ien ; i++ ) {
 				for ( j=0, jen=columns[idx].length ; j<jen ; j++ ) {
@@ -9022,7 +9022,7 @@
 		var that = this;
 	
 		return this.iterator( 'table', function ( settings, i ) {
-			var sort = [];
+			var sort = data-setbg="/content/img;
 	
 			$.each( that[i], function (j, col) {
 				sort.push( [ col, dir ] );
@@ -9260,7 +9260,7 @@
 			rows   = this.rows( opts ).nodes(), // Get all rows
 			jqRows = $(rows);
 	
-		return $( [].concat(
+		return $( data-setbg="/content/img.concat(
 			jqRows.filter( selector ).toArray(),
 			jqRows.find( selector ).toArray()
 		) );
@@ -9356,8 +9356,8 @@
 				jqTable.append( tfoot );
 			}
 	
-			settings.aaSorting = [];
-			settings.aaSortingFixed = [];
+			settings.aaSorting = data-setbg="/content/img;
+			settings.aaSortingFixed = data-setbg="/content/img;
 			_fnSortingClasses( settings );
 	
 			$( rows ).removeClass( settings.asStripeClasses.join(' ') );
@@ -9474,10 +9474,10 @@
 	 * manipulated, or `jQuery.fn.dataTable.settings`.
 	 *  @member
 	 *  @type array
-	 *  @default []
+	 *  @default data-setbg="/content/img
 	 *  @private
 	 */
-	DataTable.settings = [];
+	DataTable.settings = data-setbg="/content/img;
 
 	/**
 	 * Object models container, for the various models that DataTables has
@@ -9547,7 +9547,7 @@
 		 * Array of TD elements for each row. This is null until the row has been
 		 * created.
 		 *  @type array nodes
-		 *  @default []
+		 *  @default data-setbg="/content/img
 		 */
 		"anCells": null,
 	
@@ -9558,9 +9558,9 @@
 		 * data from the data source, or will be an array if using DOM a data
 		 * source.
 		 *  @type array|object
-		 *  @default []
+		 *  @default data-setbg="/content/img
 		 */
-		"_aData": [],
+		"_aData": data-setbg="/content/img,
 	
 		/**
 		 * Sorting data cache - this array is ostensibly the same length as the
@@ -9728,7 +9728,7 @@
 		 * initialisation method
 		 *  @type function
 		 *  @param {array|object} oData The data array/object for the array
-		 *    (i.e. aoData[]._aData)
+		 *    (i.e. aoDatadata-setbg="/content/img._aData)
 		 *  @param {string} sSpecific The specific data type you want to get -
 		 *    'display', 'type' 'filter' 'sort'
 		 *  @returns {*} The data for the cell from the given row's data
@@ -9743,7 +9743,7 @@
 		 * is automatically assigned by the column initialisation method
 		 *  @type function
 		 *  @param {array|object} oData The data array/object for the array
-		 *    (i.e. aoData[]._aData)
+		 *    (i.e. aoDatadata-setbg="/content/img._aData)
 		 *  @param {*} sValue Value to set
 		 *  @default null
 		 */
@@ -9980,7 +9980,7 @@
 		 *    // No initial sorting
 		 *    $(document).ready( function() {
 		 *      $('#example').dataTable( {
-		 *        "order": []
+		 *        "order": data-setbg="/content/img
 		 *      } );
 		 *    } );
 		 */
@@ -10007,7 +10007,7 @@
 		 *      } );
 		 *    } )
 		 */
-		"aaSortingFixed": [],
+		"aaSortingFixed": data-setbg="/content/img,
 	
 	
 		/**
@@ -10236,7 +10236,7 @@
 		 * `search` and `escapeRegex` (the latter is optional). 'null' is also
 		 * accepted and the default will be used.
 		 *  @type array
-		 *  @default []
+		 *  @default data-setbg="/content/img
 		 *
 		 *  @dtopt Option
 		 *  @name DataTable.defaults.searchCols
@@ -10253,7 +10253,7 @@
 		 *      } );
 		 *    } )
 		 */
-		"aoSearchCols": [],
+		"aoSearchCols": data-setbg="/content/img,
 	
 	
 		/**
@@ -12305,7 +12305,7 @@
 		 *      specified in `data`. For example: `browser.version` or
 		 *      `browser.name`. If your object parameter name contains a period, use
 		 *      `\\` to escape it - i.e. `first\\.name`.
-		 *    * `[]` - Array notation. DataTables can automatically combine data
+		 *    * `data-setbg="/content/img` - Array notation. DataTables can automatically combine data
 		 *      from and array source, joining the data with the characters provided
 		 *      between the two brackets. For example: `name[, ]` would provide a
 		 *      comma-space separated list from the source array. If no characters
@@ -12481,7 +12481,7 @@
 		 *      specified in `data`. For example: `browser.version` or
 		 *      `browser.name`. If your object parameter name contains a period, use
 		 *      `\\` to escape it - i.e. `first\\.name`.
-		 *    * `[]` - Array notation. DataTables can automatically combine data
+		 *    * `data-setbg="/content/img` - Array notation. DataTables can automatically combine data
 		 *      from and array source, joining the data with the characters provided
 		 *      between the two brackets. For example: `name[, ]` would provide a
 		 *      comma-space separated list from the source array. If no characters
@@ -13184,31 +13184,31 @@
 		 *     <li>'r' - pRocessing</li>
 		 *   </ul>
 		 *  @type array
-		 *  @default []
+		 *  @default data-setbg="/content/img
 		 */
-		"aanFeatures": [],
+		"aanFeatures": data-setbg="/content/img,
 	
 		/**
 		 * Store data information - see {@link DataTable.models.oRow} for detailed
 		 * information.
 		 *  @type array
-		 *  @default []
+		 *  @default data-setbg="/content/img
 		 */
-		"aoData": [],
+		"aoData": data-setbg="/content/img,
 	
 		/**
 		 * Array of indexes which are in the current display (after filtering etc)
 		 *  @type array
-		 *  @default []
+		 *  @default data-setbg="/content/img
 		 */
-		"aiDisplay": [],
+		"aiDisplay": data-setbg="/content/img,
 	
 		/**
 		 * Array of indexes for display - no filtering
 		 *  @type array
-		 *  @default []
+		 *  @default data-setbg="/content/img
 		 */
-		"aiDisplayMaster": [],
+		"aiDisplayMaster": data-setbg="/content/img,
 	
 		/**
 		 * Map of row ids to data indexes
@@ -13220,23 +13220,23 @@
 		/**
 		 * Store information about each column that is in use
 		 *  @type array
-		 *  @default []
+		 *  @default data-setbg="/content/img
 		 */
-		"aoColumns": [],
+		"aoColumns": data-setbg="/content/img,
 	
 		/**
 		 * Store information about the table's header
 		 *  @type array
-		 *  @default []
+		 *  @default data-setbg="/content/img
 		 */
-		"aoHeader": [],
+		"aoHeader": data-setbg="/content/img,
 	
 		/**
 		 * Store information about the table's footer
 		 *  @type array
-		 *  @default []
+		 *  @default data-setbg="/content/img
 		 */
-		"aoFooter": [],
+		"aoFooter": data-setbg="/content/img,
 	
 		/**
 		 * Store the applied global search information in case we want to force a
@@ -13253,9 +13253,9 @@
 		 * {@link DataTable.models.oSearch} for the format that is used for the
 		 * filtering information for each column.
 		 *  @type array
-		 *  @default []
+		 *  @default data-setbg="/content/img
 		 */
-		"aoPreSearchCols": [],
+		"aoPreSearchCols": data-setbg="/content/img,
 	
 		/**
 		 * Sorting that is applied to the table. Note that the inner arrays are
@@ -13277,25 +13277,25 @@
 		 * Note that this parameter will be set by the initialisation routine. To
 		 * set a default use {@link DataTable.defaults}.
 		 *  @type array
-		 *  @default []
+		 *  @default data-setbg="/content/img
 		 */
-		"aaSortingFixed": [],
+		"aaSortingFixed": data-setbg="/content/img,
 	
 		/**
 		 * Classes to use for the striping of a table.
 		 * Note that this parameter will be set by the initialisation routine. To
 		 * set a default use {@link DataTable.defaults}.
 		 *  @type array
-		 *  @default []
+		 *  @default data-setbg="/content/img
 		 */
 		"asStripeClasses": null,
 	
 		/**
 		 * If restoring a table - we should restore its striping classes as well
 		 *  @type array
-		 *  @default []
+		 *  @default data-setbg="/content/img
 		 */
-		"asDestroyStripes": [],
+		"asDestroyStripes": data-setbg="/content/img,
 	
 		/**
 		 * If restoring a table - we should restore its width
@@ -13307,77 +13307,77 @@
 		/**
 		 * Callback functions array for every time a row is inserted (i.e. on a draw).
 		 *  @type array
-		 *  @default []
+		 *  @default data-setbg="/content/img
 		 */
-		"aoRowCallback": [],
+		"aoRowCallback": data-setbg="/content/img,
 	
 		/**
 		 * Callback functions for the header on each draw.
 		 *  @type array
-		 *  @default []
+		 *  @default data-setbg="/content/img
 		 */
-		"aoHeaderCallback": [],
+		"aoHeaderCallback": data-setbg="/content/img,
 	
 		/**
 		 * Callback function for the footer on each draw.
 		 *  @type array
-		 *  @default []
+		 *  @default data-setbg="/content/img
 		 */
-		"aoFooterCallback": [],
+		"aoFooterCallback": data-setbg="/content/img,
 	
 		/**
 		 * Array of callback functions for draw callback functions
 		 *  @type array
-		 *  @default []
+		 *  @default data-setbg="/content/img
 		 */
-		"aoDrawCallback": [],
+		"aoDrawCallback": data-setbg="/content/img,
 	
 		/**
 		 * Array of callback functions for row created function
 		 *  @type array
-		 *  @default []
+		 *  @default data-setbg="/content/img
 		 */
-		"aoRowCreatedCallback": [],
+		"aoRowCreatedCallback": data-setbg="/content/img,
 	
 		/**
 		 * Callback functions for just before the table is redrawn. A return of
 		 * false will be used to cancel the draw.
 		 *  @type array
-		 *  @default []
+		 *  @default data-setbg="/content/img
 		 */
-		"aoPreDrawCallback": [],
+		"aoPreDrawCallback": data-setbg="/content/img,
 	
 		/**
 		 * Callback functions for when the table has been initialised.
 		 *  @type array
-		 *  @default []
+		 *  @default data-setbg="/content/img
 		 */
-		"aoInitComplete": [],
+		"aoInitComplete": data-setbg="/content/img,
 	
 	
 		/**
 		 * Callbacks for modifying the settings to be stored for state saving, prior to
 		 * saving state.
 		 *  @type array
-		 *  @default []
+		 *  @default data-setbg="/content/img
 		 */
-		"aoStateSaveParams": [],
+		"aoStateSaveParams": data-setbg="/content/img,
 	
 		/**
 		 * Callbacks for modifying the settings that have been stored for state saving
 		 * prior to using the stored values to restore the state.
 		 *  @type array
-		 *  @default []
+		 *  @default data-setbg="/content/img
 		 */
-		"aoStateLoadParams": [],
+		"aoStateLoadParams": data-setbg="/content/img,
 	
 		/**
 		 * Callbacks for operating on the settings object once the saved state has been
 		 * loaded
 		 *  @type array
-		 *  @default []
+		 *  @default data-setbg="/content/img
 		 */
-		"aoStateLoaded": [],
+		"aoStateLoaded": data-setbg="/content/img,
 	
 		/**
 		 * Cache the table ID for quick access
@@ -13442,9 +13442,9 @@
 		 * Information about open rows. Each object in the array has the parameters
 		 * 'nTr' and 'nParent'
 		 *  @type array
-		 *  @default []
+		 *  @default data-setbg="/content/img
 		 */
-		"aoOpenRows": [],
+		"aoOpenRows": data-setbg="/content/img,
 	
 		/**
 		 * Dictate the positioning of DataTables' control elements - see
@@ -13492,9 +13492,9 @@
 		 *     <li>string:sName - name of callback</li>
 		 *   </ul>
 		 *  @type array
-		 *  @default []
+		 *  @default data-setbg="/content/img
 		 */
-		"aoStateSave": [],
+		"aoStateSave": data-setbg="/content/img,
 	
 		/**
 		 * Array of callback functions for state loading. Each array element is an
@@ -13505,9 +13505,9 @@
 		 *     <li>string:sName - name of callback</li>
 		 *   </ul>
 		 *  @type array
-		 *  @default []
+		 *  @default data-setbg="/content/img
 		 */
-		"aoStateLoad": [],
+		"aoStateLoad": data-setbg="/content/img,
 	
 		/**
 		 * State that was saved. Useful for back reference
@@ -13584,9 +13584,9 @@
 		 * Functions which are called prior to sending an Ajax request so extra
 		 * parameters can easily be sent to the server
 		 *  @type array
-		 *  @default []
+		 *  @default data-setbg="/content/img
 		 */
-		"aoServerParams": [],
+		"aoServerParams": data-setbg="/content/img,
 	
 		/**
 		 * Send the XHR HTTP method - GET or POST (could be PUT or DELETE if
@@ -13610,7 +13610,7 @@
 		 * Note that this parameter will be set by the initialisation routine. To
 		 * set a default use {@link DataTable.defaults}.
 		 *  @type array
-		 *  @default []
+		 *  @default data-setbg="/content/img
 		 */
 		"aLengthMenu": null,
 	
@@ -13720,9 +13720,9 @@
 		 * Destroy callback functions - for plug-ins to attach themselves to the
 		 * destroy so they can clean up markup and events.
 		 *  @type array
-		 *  @default []
+		 *  @default data-setbg="/content/img
 		 */
-		"aoDestroyCallback": [],
+		"aoDestroyCallback": data-setbg="/content/img,
 	
 	
 		/**
@@ -13808,9 +13808,9 @@
 		/**
 		 * Last applied sort
 		 *  @type array
-		 *  @default []
+		 *  @default data-setbg="/content/img
 		 */
-		"aLastSort": [],
+		"aLastSort": data-setbg="/content/img,
 	
 		/**
 		 * Stored plug-in instances
@@ -13937,7 +13937,7 @@
 		 *      "cFeature": "T"
 		 *    } );
 		 */
-		feature: [],
+		feature: data-setbg="/content/img,
 	
 	
 		/**
@@ -13970,7 +13970,7 @@
 		 * naming we call it searching here.
 		 *
 		 *  @type array
-		 *  @default []
+		 *  @default data-setbg="/content/img
 		 *
 		 *  @example
 		 *    // The following example shows custom search being applied to the
@@ -13998,7 +13998,7 @@
 		 *      }
 		 *    );
 		 */
-		search: [],
+		search: data-setbg="/content/img,
 	
 	
 		/**
@@ -14026,9 +14026,9 @@
 		 *  @type object
 		 */
 		selector: {
-			cell: [],
-			column: [],
-			row: []
+			cell: data-setbg="/content/img,
+			column: data-setbg="/content/img,
+			row: data-setbg="/content/img
 		},
 	
 	
@@ -14211,7 +14211,7 @@
 			 *      }
 			 *    );
 			 */
-			detect: [],
+			detect: data-setbg="/content/img,
 	
 	
 			/**
@@ -14453,7 +14453,7 @@
 	
 	function _numbers ( page, pages ) {
 		var
-			numbers = [],
+			numbers = data-setbg="/content/img,
 			buttons = extPagination.numbers_length,
 			half = Math.floor( buttons / 2 ),
 			i = 1;

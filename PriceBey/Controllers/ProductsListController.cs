@@ -1,8 +1,6 @@
 ﻿using PriceBey.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace PriceBey.Controllers
@@ -14,10 +12,12 @@ namespace PriceBey.Controllers
         public ActionResult Index()
         {
             return View();
+
         }
+
         public ActionResult Categories()
         {
-            return PartialView("_Categories",db.Categories.ToList());
+            return PartialView("_Categories", db.Categories.ToList());
         }
         public ActionResult Brands()
         {
@@ -29,7 +29,7 @@ namespace PriceBey.Controllers
         {
             // select * from products where id>0 and CategoryId = 2323 and price>=1 and price<=56;
 
-            var data = db.Products.Include("Category").Include("Prices").Include("Prices.Store").Where(a=>a.ID > 0);
+            var data = db.Products.Include("Category").Include("Prices").Include("Prices.Store").Where(a => a.ID > 0 && a.Prices.Count > 0);
 
             if (Request.QueryString["ct"] != null && !string.IsNullOrEmpty(Request.QueryString["ct"]))
             {
@@ -50,10 +50,11 @@ namespace PriceBey.Controllers
                 var min = Convert.ToDecimal(Request.QueryString["min"]);
                 var max = Convert.ToDecimal(Request.QueryString["max"]);
 
-                data = data.Where(a => a.Prices.Where(c=>c.Price >= min && c.Price <=max).Any());
+                data = data.Where(a => a.Prices.Where(c => c.Price >= min && c.Price <= max).Any());
             }
 
             return PartialView("_Products", data.ToList());
         }
+
     }
 }

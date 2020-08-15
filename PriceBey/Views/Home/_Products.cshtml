@@ -5,11 +5,13 @@
     <div class="col-lg-3 col-sm-6">
         <div class="product-item">
             <div class="pi-pic">
-                <img src="@item.Image" alt="">
+                <a href="/ProductDetail?id=@item.ID">
+                    <img src="@item.Image" alt="">
+                </a>
             </div>
             <div class="pi-text">
                 <div class="catagory-name">@item.Category.Name</div>
-                <a href="#">
+                <a href="/ProductDetail?id=@item.ID">
                     <h5>@item.Name</h5>
                 </a>
                 <div class="product-price">
@@ -27,9 +29,17 @@
                     @foreach (var price in item.Prices.OrderBy(a => a.Price))
                     {
                         <div class="price-row">
-                            <a href="/ProductDetail?id=@item.ID" target="_self">
+                            <a href="/ProductDetail?id=@item.ID&store=@price.StoreId" target="_self">
                                 <div class="img">
-                                    <img alt="homeshopping.pk" src="https://www.cartright.pk//StoreLogos/9/Homeshopping.png">
+                                    @if (@price.Store.Logo != null)
+                                    {
+                                        <img alt="@price.Store.Name" src="~/StoreLogos/@price.StoreId/@price.Store.Logo">
+                                    }
+                                    else
+                                    {
+                                        <span>@price.Store.Name</span>
+                                    }
+
                                 </div>
                                 <div class="price">
                                     <span>Rs.</span> @price.Price

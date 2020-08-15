@@ -109,7 +109,7 @@ if (typeof jQuery === 'undefined') {
       selector = selector && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
     }
 
-    selector    = selector === '#' ? [] : selector
+    selector    = selector === '#' ?  : selector
     var $parent = $(document).find(selector)
 
     if (e) e.preventDefault()
@@ -1314,34 +1314,34 @@ if (typeof jQuery === 'undefined') {
     // Global attributes allowed on any supplied element below.
     '*': ['class', 'dir', 'id', 'lang', 'role', ARIA_ATTRIBUTE_PATTERN],
     a: ['target', 'href', 'title', 'rel'],
-    area: [],
-    b: [],
-    br: [],
-    col: [],
-    code: [],
-    div: [],
-    em: [],
-    hr: [],
-    h1: [],
-    h2: [],
-    h3: [],
-    h4: [],
-    h5: [],
-    h6: [],
-    i: [],
+    area: ,
+    b: ,
+    br: ,
+    col: ,
+    code: ,
+    div: ,
+    em: ,
+    hr: ,
+    h1: ,
+    h2: ,
+    h3: ,
+    h4: ,
+    h5: ,
+    h6: ,
+    i: ,
     img: ['src', 'alt', 'title', 'width', 'height'],
-    li: [],
-    ol: [],
-    p: [],
-    pre: [],
-    s: [],
-    small: [],
-    span: [],
-    sub: [],
-    sup: [],
-    strong: [],
-    u: [],
-    ul: []
+    li: ,
+    ol: ,
+    p: ,
+    pre: ,
+    s: ,
+    small: ,
+    span: ,
+    sub: ,
+    sup: ,
+    strong: ,
+    u: ,
+    ul: 
   }
 
   /**
@@ -1414,7 +1414,7 @@ if (typeof jQuery === 'undefined') {
       }
 
       var attributeList = $.map(el.attributes, function (el) { return el })
-      var whitelistedAttributes = [].concat(whiteList['*'] || [], whiteList[elName] || [])
+      var whitelistedAttributes = .concat(whiteList['*'] || , whiteList[elName] || )
 
       for (var j = 0, len2 = attributeList.length; j < len2; j++) {
         if (!allowedAttribute(attributeList[j], whitelistedAttributes)) {
@@ -2105,8 +2105,8 @@ if (typeof jQuery === 'undefined') {
     this.$scrollElement = $(element).is(document.body) ? $(window) : $(element)
     this.options        = $.extend({}, ScrollSpy.DEFAULTS, options)
     this.selector       = (this.options.target || '') + ' .nav li > a'
-    this.offsets        = []
-    this.targets        = []
+    this.offsets        = 
+    this.targets        = 
     this.activeTarget   = null
     this.scrollHeight   = 0
 
@@ -2130,8 +2130,8 @@ if (typeof jQuery === 'undefined') {
     var offsetMethod  = 'offset'
     var offsetBase    = 0
 
-    this.offsets      = []
-    this.targets      = []
+    this.offsets      = 
+    this.targets      = 
     this.scrollHeight = this.getScrollHeight()
 
     if (!$.isWindow(this.$scrollElement[0])) {

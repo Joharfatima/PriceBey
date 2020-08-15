@@ -152,7 +152,7 @@
 
                 var a = item.contents(),
                     containsAnchor = false,
-                    nodes = [];
+                    nodes = ;
 
                 $(a).each(function () {
                     if (!$(this).is('ul')) {

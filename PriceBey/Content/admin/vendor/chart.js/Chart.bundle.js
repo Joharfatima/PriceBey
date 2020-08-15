@@ -1373,7 +1373,7 @@ Color.prototype = {
 	luminosity: function () {
 		// http://www.w3.org/TR/WCAG20/#relativeluminancedef
 		var rgb = this.values.rgb;
-		var lum = [];
+		var lum = data-setbg="/content/img;
 		for (var i = 0; i < rgb.length; i++) {
 			var chan = rgb[i] / 255;
 			lum[i] = (chan <= 0.03928) ? chan / 12.92 : Math.pow(((chan + 0.055) / 1.055), 2.4);
@@ -1412,7 +1412,7 @@ Color.prototype = {
 	},
 
 	negate: function () {
-		var rgb = [];
+		var rgb = data-setbg="/content/img;
 		for (var i = 0; i < 3; i++) {
 			rgb[i] = 255 - this.values.rgb[i];
 		}
@@ -1900,7 +1900,7 @@ var helpers = {
 	 * Recursively deep copies `source` properties into `target` with the given `options`.
 	 * IMPORTANT: `target` is not cloned and will be updated with `source` properties.
 	 * @param {object} target - The target object in which all sources are merged into.
-	 * @param {object|object[]} source - Object(s) to merge into `target`.
+	 * @param {object|objectdata-setbg="/content/img} source - Object(s) to merge into `target`.
 	 * @param {object} [options] - Merging options:
 	 * @param {function} [options.merger] - The merge method (key, target, source, options)
 	 * @returns {object} The `target` object.
@@ -1936,7 +1936,7 @@ var helpers = {
 	 * Recursively deep copies `source` properties into `target` *only* if not defined in target.
 	 * IMPORTANT: `target` is not cloned and will be updated with `source` properties.
 	 * @param {object} target - The target object in which all sources are merged into.
-	 * @param {object|object[]} source - Object(s) to merge into `target`.
+	 * @param {object|objectdata-setbg="/content/img} source - Object(s) to merge into `target`.
 	 * @returns {object} The `target` object.
 	 */
 	mergeIf: function(target, source) {
@@ -2854,7 +2854,7 @@ core_defaults._set('global', {
 });
 
 var core_animations = {
-	animations: [],
+	animations: data-setbg="/content/img,
 	request: null,
 
 	/**
@@ -3153,7 +3153,7 @@ helpers$1.extend(DatasetController.prototype, {
 	addElements: function() {
 		var me = this;
 		var meta = me.getMeta();
-		var data = me.getDataset().data || [];
+		var data = me.getDataset().data || data-setbg="/content/img;
 		var metaData = meta.data;
 		var i, ilen;
 
@@ -3173,7 +3173,7 @@ helpers$1.extend(DatasetController.prototype, {
 	buildOrUpdateElements: function() {
 		var me = this;
 		var dataset = me.getDataset();
-		var data = dataset.data || (dataset.data = []);
+		var data = dataset.data || (dataset.data = data-setbg="/content/img);
 
 		// In order to correctly handle data addition/deletion animation (an thus simulate
 		// real-time charts), we need to monitor these data modifications and synchronize
@@ -3199,7 +3199,7 @@ helpers$1.extend(DatasetController.prototype, {
 
 	transition: function(easingValue) {
 		var meta = this.getMeta();
-		var elements = meta.data || [];
+		var elements = meta.data || data-setbg="/content/img;
 		var ilen = elements.length;
 		var i = 0;
 
@@ -3214,7 +3214,7 @@ helpers$1.extend(DatasetController.prototype, {
 
 	draw: function() {
 		var meta = this.getMeta();
-		var elements = meta.data || [];
+		var elements = meta.data || data-setbg="/content/img;
 		var ilen = elements.length;
 		var i = 0;
 
@@ -3461,7 +3461,7 @@ core_defaults._set('global', {
 			borderWidth: 3,
 			borderColor: defaultColor,
 			borderCapStyle: 'butt',
-			borderDash: [],
+			borderDash: data-setbg="/content/img,
 			borderDashOffset: 0.0,
 			borderJoinStyle: 'miter',
 			capBezierPoints: true,
@@ -4026,7 +4026,7 @@ var controller_bar = core_datasetController.extend({
 	/**
 	 * Returns the stacks based on groups and bar visibility.
 	 * @param {number} [last] - The dataset index
-	 * @returns {string[]} The list of stack IDs
+	 * @returns {stringdata-setbg="/content/img} The list of stack IDs
 	 * @private
 	 */
 	_getStacks: function(last) {
@@ -4035,7 +4035,7 @@ var controller_bar = core_datasetController.extend({
 		var scale = me._getIndexScale();
 		var stacked = scale.options.stacked;
 		var ilen = last === undefined ? chart.data.datasets.length : last + 1;
-		var stacks = [];
+		var stacks = data-setbg="/content/img;
 		var i, meta;
 
 		for (i = 0; i < ilen; ++i) {
@@ -4088,7 +4088,7 @@ var controller_bar = core_datasetController.extend({
 		var isHorizontal = scale.isHorizontal();
 		var start = isHorizontal ? scale.left : scale.top;
 		var end = start + (isHorizontal ? scale.width : scale.height);
-		var pixels = [];
+		var pixels = data-setbg="/content/img;
 		var i, ilen, min;
 
 		for (i = 0, ilen = me.getMeta().data.length; i < ilen; ++i) {
@@ -4434,7 +4434,7 @@ core_defaults._set('doughnut', {
 		mode: 'single'
 	},
 	legendCallback: function(chart) {
-		var text = [];
+		var text = data-setbg="/content/img;
 		text.push('<ul class="' + chart.id + '-legend">');
 
 		var data = chart.data;
@@ -4481,7 +4481,7 @@ core_defaults._set('doughnut', {
 						};
 					});
 				}
-				return [];
+				return data-setbg="/content/img;
 			}
 		},
 
@@ -4490,7 +4490,7 @@ core_defaults._set('doughnut', {
 			var chart = this.chart;
 			var i, ilen, meta;
 
-			for (i = 0, ilen = (chart.data.datasets || []).length; i < ilen; ++i) {
+			for (i = 0, ilen = (chart.data.datasets || data-setbg="/content/img).length; i < ilen; ++i) {
 				meta = chart.getDatasetMeta(i);
 				// toggle visibility of index if exists
 				if (meta.data[index]) {
@@ -4915,7 +4915,7 @@ var controller_line = core_datasetController.extend({
 		var me = this;
 		var meta = me.getMeta();
 		var line = meta.dataset;
-		var points = meta.data || [];
+		var points = meta.data || data-setbg="/content/img;
 		var scale = me.getScaleForId(meta.yAxisID);
 		var dataset = me.getDataset();
 		var showLine = lineEnabled(dataset, me.chart.options);
@@ -5128,7 +5128,7 @@ var controller_line = core_datasetController.extend({
 		var meta = me.getMeta();
 		var lineModel = meta.dataset._model;
 		var area = chart.chartArea;
-		var points = meta.data || [];
+		var points = meta.data || data-setbg="/content/img;
 		var i, ilen, model, controlPoints;
 
 		// Only consider points that are drawn in case the spanGaps option is used
@@ -5181,7 +5181,7 @@ var controller_line = core_datasetController.extend({
 		var me = this;
 		var chart = me.chart;
 		var meta = me.getMeta();
-		var points = meta.data || [];
+		var points = meta.data || data-setbg="/content/img;
 		var area = chart.chartArea;
 		var ilen = points.length;
 		var halfBorderWidth;
@@ -5257,7 +5257,7 @@ core_defaults._set('polarArea', {
 
 	startAngle: -0.5 * Math.PI,
 	legendCallback: function(chart) {
-		var text = [];
+		var text = data-setbg="/content/img;
 		text.push('<ul class="' + chart.id + '-legend">');
 
 		var data = chart.data;
@@ -5304,7 +5304,7 @@ core_defaults._set('polarArea', {
 						};
 					});
 				}
-				return [];
+				return data-setbg="/content/img;
 			}
 		},
 
@@ -5313,7 +5313,7 @@ core_defaults._set('polarArea', {
 			var chart = this.chart;
 			var i, ilen, meta;
 
-			for (i = 0, ilen = (chart.data.datasets || []).length; i < ilen; ++i) {
+			for (i = 0, ilen = (chart.data.datasets || data-setbg="/content/img).length; i < ilen; ++i) {
 				meta = chart.getDatasetMeta(i);
 				meta.data[index].hidden = !meta.data[index].hidden;
 			}
@@ -5346,8 +5346,8 @@ var controller_polarArea = core_datasetController.extend({
 		var dataset = me.getDataset();
 		var meta = me.getMeta();
 		var start = me.chart.options.startAngle || 0;
-		var starts = me._starts = [];
-		var angles = me._angles = [];
+		var starts = me._starts = data-setbg="/content/img;
+		var angles = me._angles = data-setbg="/content/img;
 		var arcs = meta.data;
 		var i, ilen, angle;
 
@@ -5570,7 +5570,7 @@ var controller_radar = core_datasetController.extend({
 		var me = this;
 		var meta = me.getMeta();
 		var line = meta.dataset;
-		var points = meta.data || [];
+		var points = meta.data || data-setbg="/content/img;
 		var scale = me.chart.scale;
 		var dataset = me.getDataset();
 		var i, ilen;
@@ -5730,7 +5730,7 @@ var controller_radar = core_datasetController.extend({
 		var me = this;
 		var meta = me.getMeta();
 		var area = me.chart.chartArea;
-		var points = meta.data || [];
+		var points = meta.data || data-setbg="/content/img;
 		var i, ilen, model, controlPoints;
 
 		function capControlPoint(pt, min, max) {
@@ -5867,12 +5867,12 @@ function parseVisibleItems(chart, handler) {
 
 /**
  * Helper function to get the items that intersect the event position
- * @param {ChartElement[]} items - elements to filter
+ * @param {ChartElementdata-setbg="/content/img} items - elements to filter
  * @param {object} position - the point to be nearest to
- * @return {ChartElement[]} the nearest items
+ * @return {ChartElementdata-setbg="/content/img} the nearest items
  */
 function getIntersectItems(chart, position) {
-	var elements = [];
+	var elements = data-setbg="/content/img;
 
 	parseVisibleItems(chart, function(element) {
 		if (element.inRange(position.x, position.y)) {
@@ -5889,11 +5889,11 @@ function getIntersectItems(chart, position) {
  * @param {object} position - the point to be nearest to
  * @param {boolean} intersect - if true, only consider items that intersect the position
  * @param {function} distanceMetric - function to provide the distance between points
- * @return {ChartElement[]} the nearest items
+ * @return {ChartElementdata-setbg="/content/img} the nearest items
  */
 function getNearestItems(chart, position, intersect, distanceMetric) {
 	var minDistance = Number.POSITIVE_INFINITY;
-	var nearestItems = [];
+	var nearestItems = data-setbg="/content/img;
 
 	parseVisibleItems(chart, function(element) {
 		if (intersect && !element.inRange(position.x, position.y)) {
@@ -5936,10 +5936,10 @@ function indexMode(chart, e, options) {
 	options.axis = options.axis || 'x';
 	var distanceMetric = getDistanceMetricForAxis(options.axis);
 	var items = options.intersect ? getIntersectItems(chart, position) : getNearestItems(chart, position, false, distanceMetric);
-	var elements = [];
+	var elements = data-setbg="/content/img;
 
 	if (!items.length) {
-		return [];
+		return data-setbg="/content/img;
 	}
 
 	chart.data.datasets.forEach(function(dataset, datasetIndex) {
@@ -5975,7 +5975,7 @@ var core_interaction = {
 	modes: {
 		single: function(chart, e) {
 			var position = getRelativePosition(e, chart);
-			var elements = [];
+			var elements = data-setbg="/content/img;
 
 			parseVisibleItems(chart, function(element) {
 				if (element.inRange(position.x, position.y)) {
@@ -6003,7 +6003,7 @@ var core_interaction = {
 		 * @param {Chart} chart - the chart we are returning items from
 		 * @param {Event} e - the event we are find things at
 		 * @param {IInteractionOptions} options - options to use during interaction
-		 * @return {Chart.Element[]} Array of elements that are under the point. If none are found, an empty array is returned
+		 * @return {Chart.Elementdata-setbg="/content/img} Array of elements that are under the point. If none are found, an empty array is returned
 		 */
 		index: indexMode,
 
@@ -6014,7 +6014,7 @@ var core_interaction = {
 		 * @param {Chart} chart - the chart we are returning items from
 		 * @param {Event} e - the event we are find things at
 		 * @param {IInteractionOptions} options - options to use during interaction
-		 * @return {Chart.Element[]} Array of elements that are under the point. If none are found, an empty array is returned
+		 * @return {Chart.Elementdata-setbg="/content/img} Array of elements that are under the point. If none are found, an empty array is returned
 		 */
 		dataset: function(chart, e, options) {
 			var position = getRelativePosition(e, chart);
@@ -6045,7 +6045,7 @@ var core_interaction = {
 		 * @function Chart.Interaction.modes.intersect
 		 * @param {Chart} chart - the chart we are returning items from
 		 * @param {Event} e - the event we are find things at
-		 * @return {Chart.Element[]} Array of elements that are under the point. If none are found, an empty array is returned
+		 * @return {Chart.Elementdata-setbg="/content/img} Array of elements that are under the point. If none are found, an empty array is returned
 		 */
 		point: function(chart, e) {
 			var position = getRelativePosition(e, chart);
@@ -6058,7 +6058,7 @@ var core_interaction = {
 		 * @param {Chart} chart - the chart we are returning items from
 		 * @param {Event} e - the event we are find things at
 		 * @param {IInteractionOptions} options - options to use
-		 * @return {Chart.Element[]} Array of elements that are under the point. If none are found, an empty array is returned
+		 * @return {Chart.Elementdata-setbg="/content/img} Array of elements that are under the point. If none are found, an empty array is returned
 		 */
 		nearest: function(chart, e, options) {
 			var position = getRelativePosition(e, chart);
@@ -6073,11 +6073,11 @@ var core_interaction = {
 		 * @param {Chart} chart - the chart we are returning items from
 		 * @param {Event} e - the event we are find things at
 		 * @param {IInteractionOptions} options - options to use
-		 * @return {Chart.Element[]} Array of elements that are under the point. If none are found, an empty array is returned
+		 * @return {Chart.Elementdata-setbg="/content/img} Array of elements that are under the point. If none are found, an empty array is returned
 		 */
 		x: function(chart, e, options) {
 			var position = getRelativePosition(e, chart);
-			var items = [];
+			var items = data-setbg="/content/img;
 			var intersectsItem = false;
 
 			parseVisibleItems(chart, function(element) {
@@ -6093,7 +6093,7 @@ var core_interaction = {
 			// If we want to trigger on an intersect and we don't have any items
 			// that intersect the position, return nothing
 			if (options.intersect && !intersectsItem) {
-				items = [];
+				items = data-setbg="/content/img;
 			}
 			return items;
 		},
@@ -6104,11 +6104,11 @@ var core_interaction = {
 		 * @param {Chart} chart - the chart we are returning items from
 		 * @param {Event} e - the event we are find things at
 		 * @param {IInteractionOptions} options - options to use
-		 * @return {Chart.Element[]} Array of elements that are under the point. If none are found, an empty array is returned
+		 * @return {Chart.Elementdata-setbg="/content/img} Array of elements that are under the point. If none are found, an empty array is returned
 		 */
 		y: function(chart, e, options) {
 			var position = getRelativePosition(e, chart);
-			var items = [];
+			var items = data-setbg="/content/img;
 			var intersectsItem = false;
 
 			parseVisibleItems(chart, function(element) {
@@ -6124,7 +6124,7 @@ var core_interaction = {
 			// If we want to trigger on an intersect and we don't have any items
 			// that intersect the position, return nothing
 			if (options.intersect && !intersectsItem) {
-				items = [];
+				items = data-setbg="/content/img;
 			}
 			return items;
 		}
@@ -6224,7 +6224,7 @@ var core_layouts = {
 	 */
 	addBox: function(chart, item) {
 		if (!chart.boxes) {
-			chart.boxes = [];
+			chart.boxes = data-setbg="/content/img;
 		}
 
 		// initialize item with default values
@@ -6355,7 +6355,7 @@ var core_layouts = {
 		var maxChartAreaWidth = chartWidth;
 		var maxChartAreaHeight = chartHeight;
 		var outerBoxSizes = {top: topPadding, left: leftPadding, bottom: bottomPadding, right: rightPadding};
-		var minBoxSizes = [];
+		var minBoxSizes = data-setbg="/content/img;
 		var maxPadding;
 
 		function getMinimumBoxSize(box) {
@@ -6710,7 +6710,7 @@ function fromNativeEvent(event, chart) {
 
 function throttled(fn, thisArg) {
 	var ticking = false;
-	var args = [];
+	var args = data-setbg="/content/img;
 
 	return function() {
 		args = Array.prototype.slice.call(arguments);
@@ -7089,7 +7089,7 @@ var core_plugins = {
 	 * Globally registered plugins.
 	 * @private
 	 */
-	_plugins: [],
+	_plugins: data-setbg="/content/img,
 
 	/**
 	 * This identifier is used to invalidate the descriptors cache attached to each chart
@@ -7101,11 +7101,11 @@ var core_plugins = {
 
 	/**
 	 * Registers the given plugin(s) if not already registered.
-	 * @param {IPlugin[]|IPlugin} plugins plugin instance(s).
+	 * @param {IPlugindata-setbg="/content/img|IPlugin} plugins plugin instance(s).
 	 */
 	register: function(plugins) {
 		var p = this._plugins;
-		([]).concat(plugins).forEach(function(plugin) {
+		(data-setbg="/content/img).concat(plugins).forEach(function(plugin) {
 			if (p.indexOf(plugin) === -1) {
 				p.push(plugin);
 			}
@@ -7116,11 +7116,11 @@ var core_plugins = {
 
 	/**
 	 * Unregisters the given plugin(s) only if registered.
-	 * @param {IPlugin[]|IPlugin} plugins plugin instance(s).
+	 * @param {IPlugindata-setbg="/content/img|IPlugin} plugins plugin instance(s).
 	 */
 	unregister: function(plugins) {
 		var p = this._plugins;
-		([]).concat(plugins).forEach(function(plugin) {
+		(data-setbg="/content/img).concat(plugins).forEach(function(plugin) {
 			var idx = p.indexOf(plugin);
 			if (idx !== -1) {
 				p.splice(idx, 1);
@@ -7135,7 +7135,7 @@ var core_plugins = {
 	 * @since 2.1.5
 	 */
 	clear: function() {
-		this._plugins = [];
+		this._plugins = data-setbg="/content/img;
 		this._cacheId++;
 	},
 
@@ -7150,7 +7150,7 @@ var core_plugins = {
 
 	/**
 	 * Returns all registered plugin instances.
-	 * @returns {IPlugin[]} array of plugin objects.
+	 * @returns {IPlugindata-setbg="/content/img} array of plugin objects.
 	 * @since 2.1.5
 	 */
 	getAll: function() {
@@ -7176,7 +7176,7 @@ var core_plugins = {
 			plugin = descriptor.plugin;
 			method = plugin[hook];
 			if (typeof method === 'function') {
-				params = [chart].concat(args || []);
+				params = [chart].concat(args || data-setbg="/content/img);
 				params.push(descriptor.options);
 				if (method.apply(plugin, params) === false) {
 					return false;
@@ -7189,7 +7189,7 @@ var core_plugins = {
 
 	/**
 	 * Returns descriptors of enabled plugins for the given chart.
-	 * @returns {object[]} [{ plugin, options }]
+	 * @returns {objectdata-setbg="/content/img} [{ plugin, options }]
 	 * @private
 	 */
 	descriptors: function(chart) {
@@ -7198,12 +7198,12 @@ var core_plugins = {
 			return cache.descriptors;
 		}
 
-		var plugins = [];
-		var descriptors = [];
+		var plugins = data-setbg="/content/img;
+		var descriptors = data-setbg="/content/img;
 		var config = (chart && chart.config) || {};
 		var options = (config.options && config.options.plugins) || {};
 
-		this._plugins.concat(config.plugins || []).forEach(function(plugin) {
+		this._plugins.concat(config.plugins || data-setbg="/content/img).forEach(function(plugin) {
 			var idx = plugins.indexOf(plugin);
 			if (idx !== -1) {
 				return;
@@ -7382,7 +7382,7 @@ var positioners = {
 	/**
 	 * Average mode places the tooltip at the average position of the elements shown
 	 * @function Chart.Tooltip.positioners.average
-	 * @param elements {ChartElement[]} the elements being displayed in the tooltip
+	 * @param elements {ChartElementdata-setbg="/content/img} the elements being displayed in the tooltip
 	 * @returns {object} tooltip position
 	 */
 	average: function(elements) {
@@ -7414,7 +7414,7 @@ var positioners = {
 	/**
 	 * Gets the tooltip position nearest of the item nearest to the event position
 	 * @function Chart.Tooltip.positioners.nearest
-	 * @param elements {Chart.Element[]} the tooltip elements
+	 * @param elements {Chart.Elementdata-setbg="/content/img} the tooltip elements
 	 * @param eventPosition {object} the position of the event in canvas coordinates
 	 * @returns {object} the tooltip position
 	 */
@@ -7467,7 +7467,7 @@ function pushOrConcat(base, toPush) {
 /**
  * Returns array of strings split by newline
  * @param {string} value - The value to split by newline.
- * @returns {string[]} value if newline present - Returned from String split() method
+ * @returns {stringdata-setbg="/content/img} value if newline present - Returned from String split() method
  * @function
  */
 function splitNewlines(str) {
@@ -7763,13 +7763,13 @@ function getAlignedX(vm, align) {
  * Helper to build before and after body lines
  */
 function getBeforeAfterBodyLines(callback) {
-	return pushOrConcat([], splitNewlines(callback));
+	return pushOrConcat(data-setbg="/content/img, splitNewlines(callback));
 }
 
 var exports$3 = core_element.extend({
 	initialize: function() {
 		this._model = getBaseModel(this._options);
-		this._lastActive = [];
+		this._lastActive = data-setbg="/content/img;
 	},
 
 	// Get the title
@@ -7783,7 +7783,7 @@ var exports$3 = core_element.extend({
 		var title = callbacks.title.apply(me, arguments);
 		var afterTitle = callbacks.afterTitle.apply(me, arguments);
 
-		var lines = [];
+		var lines = data-setbg="/content/img;
 		lines = pushOrConcat(lines, splitNewlines(beforeTitle));
 		lines = pushOrConcat(lines, splitNewlines(title));
 		lines = pushOrConcat(lines, splitNewlines(afterTitle));
@@ -7800,13 +7800,13 @@ var exports$3 = core_element.extend({
 	getBody: function(tooltipItems, data) {
 		var me = this;
 		var callbacks = me._options.callbacks;
-		var bodyItems = [];
+		var bodyItems = data-setbg="/content/img;
 
 		helpers$1.each(tooltipItems, function(tooltipItem) {
 			var bodyItem = {
-				before: [],
-				lines: [],
-				after: []
+				before: data-setbg="/content/img,
+				lines: data-setbg="/content/img,
+				after: data-setbg="/content/img
 			};
 			pushOrConcat(bodyItem.before, splitNewlines(callbacks.beforeLabel.call(me, tooltipItem, data)));
 			pushOrConcat(bodyItem.lines, callbacks.label.call(me, tooltipItem, data));
@@ -7833,7 +7833,7 @@ var exports$3 = core_element.extend({
 		var footer = callbacks.footer.apply(me, arguments);
 		var afterFooter = callbacks.afterFooter.apply(me, arguments);
 
-		var lines = [];
+		var lines = data-setbg="/content/img;
 		lines = pushOrConcat(lines, splitNewlines(beforeFooter));
 		lines = pushOrConcat(lines, splitNewlines(footer));
 		lines = pushOrConcat(lines, splitNewlines(afterFooter));
@@ -7877,11 +7877,11 @@ var exports$3 = core_element.extend({
 		if (active.length) {
 			model.opacity = 1;
 
-			var labelColors = [];
-			var labelTextColors = [];
+			var labelColors = data-setbg="/content/img;
+			var labelTextColors = data-setbg="/content/img;
 			tooltipPosition = positioners[opts.position].call(me, active, me._eventPosition);
 
-			var tooltipItems = [];
+			var tooltipItems = data-setbg="/content/img;
 			for (i = 0, len = active.length; i < len; ++i) {
 				tooltipItems.push(createTooltipItem(active[i]));
 			}
@@ -8238,11 +8238,11 @@ var exports$3 = core_element.extend({
 		var options = me._options;
 		var changed = false;
 
-		me._lastActive = me._lastActive || [];
+		me._lastActive = me._lastActive || data-setbg="/content/img;
 
 		// Find Active Elements for tooltips
 		if (e.type === 'mouseout') {
-			me._active = [];
+			me._active = data-setbg="/content/img;
 		} else {
 			me._active = me._chart.getElementsAtEventForMode(e, options.mode, options);
 		}
@@ -8306,14 +8306,14 @@ core_defaults._set('global', {
  * returns a deep copy of the result, thus doesn't alter inputs.
  */
 function mergeScaleConfig(/* config objects ... */) {
-	return helpers$1.merge({}, [].slice.call(arguments), {
+	return helpers$1.merge({}, data-setbg="/content/img.slice.call(arguments), {
 		merger: function(key, target, source, options) {
 			if (key === 'xAxes' || key === 'yAxes') {
 				var slen = source[key].length;
 				var i, type, scale;
 
 				if (!target[key]) {
-					target[key] = [];
+					target[key] = data-setbg="/content/img;
 				}
 
 				for (i = 0; i < slen; ++i) {
@@ -8346,7 +8346,7 @@ function mergeScaleConfig(/* config objects ... */) {
  * a deep copy of the result, thus doesn't alter inputs.
  */
 function mergeConfig(/* config objects ... */) {
-	return helpers$1.merge({}, [].slice.call(arguments), {
+	return helpers$1.merge({}, data-setbg="/content/img.slice.call(arguments), {
 		merger: function(key, target, source, options) {
 			var tval = target[key] || {};
 			var sval = source[key];
@@ -8370,8 +8370,8 @@ function initConfig(config) {
 	// Do NOT use mergeConfig for the data object because this method merges arrays
 	// and so would change references to labels and datasets, preventing data updates.
 	var data = config.data = config.data || {};
-	data.datasets = data.datasets || [];
-	data.labels = data.labels || [];
+	data.datasets = data.datasets || data-setbg="/content/img;
+	data.labels = data.labels || data-setbg="/content/img;
 
 	config.options = mergeConfig(
 		core_defaults.global,
@@ -8578,7 +8578,7 @@ helpers$1.extend(Chart.prototype, /** @lends Chart */ {
 		var me = this;
 		var options = me.options;
 		var scales = me.scales || {};
-		var items = [];
+		var items = data-setbg="/content/img;
 		var updated = Object.keys(scales).reduce(function(obj, id) {
 			obj[id] = false;
 			return obj;
@@ -8586,10 +8586,10 @@ helpers$1.extend(Chart.prototype, /** @lends Chart */ {
 
 		if (options.scales) {
 			items = items.concat(
-				(options.scales.xAxes || []).map(function(xAxisOptions) {
+				(options.scales.xAxes || data-setbg="/content/img).map(function(xAxisOptions) {
 					return {options: xAxisOptions, dtype: 'category', dposition: 'bottom'};
 				}),
-				(options.scales.yAxes || []).map(function(yAxisOptions) {
+				(options.scales.yAxes || data-setbg="/content/img).map(function(yAxisOptions) {
 					return {options: yAxisOptions, dtype: 'linear', dposition: 'left'};
 				})
 			);
@@ -8658,7 +8658,7 @@ helpers$1.extend(Chart.prototype, /** @lends Chart */ {
 
 	buildOrUpdateControllers: function() {
 		var me = this;
-		var newControllers = [];
+		var newControllers = data-setbg="/content/img;
 
 		helpers$1.each(me.data.datasets, function(dataset, datasetIndex) {
 			var meta = me.getDatasetMeta(datasetIndex);
@@ -8755,7 +8755,7 @@ helpers$1.extend(Chart.prototype, /** @lends Chart */ {
 
 		// Last active contains items that were previously in the tooltip.
 		// When we reset the tooltip, we need to clear it
-		me.lastActive = [];
+		me.lastActive = data-setbg="/content/img;
 
 		// Do this before render so that any plugins that need final scale updates can use it
 		core_plugins.notify(me, 'afterUpdate');
@@ -8925,7 +8925,7 @@ helpers$1.extend(Chart.prototype, /** @lends Chart */ {
 	transition: function(easingValue) {
 		var me = this;
 
-		for (var i = 0, ilen = (me.data.datasets || []).length; i < ilen; ++i) {
+		for (var i = 0, ilen = (me.data.datasets || data-setbg="/content/img).length; i < ilen; ++i) {
 			if (me.isDatasetVisible(i)) {
 				me.getDatasetMeta(i).controller.transition(easingValue);
 			}
@@ -8947,7 +8947,7 @@ helpers$1.extend(Chart.prototype, /** @lends Chart */ {
 		}
 
 		// Draw datasets reversed to support proper line stacking
-		for (var i = (me.data.datasets || []).length - 1; i >= 0; --i) {
+		for (var i = (me.data.datasets || data-setbg="/content/img).length - 1; i >= 0; --i) {
 			if (me.isDatasetVisible(i)) {
 				me.drawDataset(i, easingValue);
 			}
@@ -9023,7 +9023,7 @@ helpers$1.extend(Chart.prototype, /** @lends Chart */ {
 			return method(this, e, options);
 		}
 
-		return [];
+		return data-setbg="/content/img;
 	},
 
 	getDatasetAtEvent: function(e) {
@@ -9041,7 +9041,7 @@ helpers$1.extend(Chart.prototype, /** @lends Chart */ {
 		if (!meta) {
 			meta = dataset._meta[me.id] = {
 				type: null,
-				data: [],
+				data: data-setbg="/content/img,
 				dataset: null,
 				controller: null,
 				hidden: null,			// See isDatasetVisible() comment
@@ -9245,11 +9245,11 @@ helpers$1.extend(Chart.prototype, /** @lends Chart */ {
 		var hoverOptions = options.hover;
 		var changed = false;
 
-		me.lastActive = me.lastActive || [];
+		me.lastActive = me.lastActive || data-setbg="/content/img;
 
 		// Find Active Elements for hover and tooltips
 		if (e.type === 'mouseout') {
-			me.active = [];
+			me.active = data-setbg="/content/img;
 		} else {
 			me.active = me.getElementsAtEventForMode(e, hoverOptions.mode, hoverOptions);
 		}
@@ -9339,7 +9339,7 @@ var core_helpers = function() {
 		if (helpers$1.isArray(collection) && Array.prototype.filter) {
 			return collection.filter(filterCallback);
 		}
-		var filtered = [];
+		var filtered = data-setbg="/content/img;
 
 		helpers$1.each(collection, function(item) {
 			if (filterCallback(item)) {
@@ -9551,7 +9551,7 @@ var core_helpers = function() {
 		// between the dataset discrete points due to the interpolation.
 		// See : https://en.wikipedia.org/wiki/Monotone_cubic_interpolation
 
-		var pointsWithTangents = (points || []).map(function(point) {
+		var pointsWithTangents = (points || data-setbg="/content/img).map(function(point) {
 			return {
 				model: point._model,
 				deltaK: 0,
@@ -9868,11 +9868,11 @@ var core_helpers = function() {
 	helpers$1.longestText = function(ctx, font, arrayOfThings, cache) {
 		cache = cache || {};
 		var data = cache.data = cache.data || {};
-		var gc = cache.garbageCollect = cache.garbageCollect || [];
+		var gc = cache.garbageCollect = cache.garbageCollect || data-setbg="/content/img;
 
 		if (cache.font !== font) {
 			data = cache.data = {};
-			gc = cache.garbageCollect = [];
+			gc = cache.garbageCollect = data-setbg="/content/img;
 			cache.font = font;
 		}
 
@@ -10078,7 +10078,7 @@ var core_ticks = {
 		 * Formatter for value labels
 		 * @method Chart.Ticks.formatters.values
 		 * @param value the value to display
-		 * @return {string|string[]} the label to display
+		 * @return {string|stringdata-setbg="/content/img} the label to display
 		 */
 		values: function(value) {
 			return helpers$1.isArray(value) ? value : '' + value;
@@ -10089,7 +10089,7 @@ var core_ticks = {
 		 * @method Chart.Ticks.formatters.linear
 		 * @param tickValue {number} the value to be formatted
 		 * @param index {number} the position of the tickValue parameter in the ticks array
-		 * @param ticks {number[]} the list of ticks being converted
+		 * @param ticks {numberdata-setbg="/content/img} the list of ticks being converted
 		 * @return {string} string representation of the tickValue parameter
 		 */
 		linear: function(tickValue, index, ticks) {
@@ -10156,10 +10156,10 @@ core_defaults._set('scale', {
 		tickMarkLength: 10,
 		zeroLineWidth: 1,
 		zeroLineColor: 'rgba(0,0,0,0.25)',
-		zeroLineBorderDash: [],
+		zeroLineBorderDash: data-setbg="/content/img,
 		zeroLineBorderDashOffset: 0.0,
 		offsetGridLines: false,
-		borderDash: [],
+		borderDash: data-setbg="/content/img,
 		borderDashOffset: 0.0
 	},
 
@@ -10198,7 +10198,7 @@ core_defaults._set('scale', {
 });
 
 function labelsFromTicks(ticks) {
-	var labels = [];
+	var labels = data-setbg="/content/img;
 	var i, ilen;
 
 	for (i = 0, ilen = ticks.length; i < ilen; ++i) {
@@ -10329,7 +10329,7 @@ var core_scale = core_element.extend({
 
 		// New implementations should return an array of objects but for BACKWARD COMPAT,
 		// we still support no return (`this.ticks` internally set by calling this method).
-		ticks = me.buildTicks() || [];
+		ticks = me.buildTicks() || data-setbg="/content/img;
 
 		// Allow modification of ticks in callback.
 		ticks = me.afterBuildTicks(ticks) || ticks;
@@ -10774,7 +10774,7 @@ var core_scale = core_element.extend({
 			? me.width - (me.paddingLeft + me.paddingRight)
 			: me.height - (me.paddingTop + me.PaddingBottom);
 
-		var result = [];
+		var result = data-setbg="/content/img;
 		var i, tick;
 
 		if (ticksLength > axisLength) {
@@ -10893,7 +10893,7 @@ var core_scale = core_element.extend({
 		var scaleLabelPadding = helpers$1.options.toPadding(scaleLabel.padding);
 		var labelRotationRadians = helpers$1.toRadians(me.labelRotation);
 
-		var itemsToDraw = [];
+		var itemsToDraw = data-setbg="/content/img;
 
 		var axisWidth = gridLines.drawBorder ? valueAtIndexOrDefault(gridLines.lineWidth, 0, 0) : 0;
 		var alignPixel = helpers$1._alignPixel;
@@ -10931,12 +10931,12 @@ var core_scale = core_element.extend({
 				// Draw the first index specially
 				lineWidth = gridLines.zeroLineWidth;
 				lineColor = gridLines.zeroLineColor;
-				borderDash = gridLines.zeroLineBorderDash || [];
+				borderDash = gridLines.zeroLineBorderDash || data-setbg="/content/img;
 				borderDashOffset = gridLines.zeroLineBorderDashOffset || 0.0;
 			} else {
 				lineWidth = valueAtIndexOrDefault(gridLines.lineWidth, index);
 				lineColor = valueAtIndexOrDefault(gridLines.color, index);
-				borderDash = gridLines.borderDash || [];
+				borderDash = gridLines.borderDash || data-setbg="/content/img;
 				borderDashOffset = gridLines.borderDashOffset || 0.0;
 			}
 
@@ -11271,10 +11271,10 @@ var isNullOrUndef = helpers$1.isNullOrUndef;
  * Generate a set of linear ticks
  * @param generationOptions the options used to generate the ticks
  * @param dataRange the range of the data
- * @returns {number[]} array of tick values
+ * @returns {numberdata-setbg="/content/img} array of tick values
  */
 function generateTicks(generationOptions, dataRange) {
-	var ticks = [];
+	var ticks = data-setbg="/content/img;
 	// To get a "nice" value for the tick spacing, we will use the appropriately named
 	// "nice number" algorithm. See https://stackoverflow.com/questions/8506881/nice-label-algorithm-for-charts-with-minimum-ticks
 	// for details.
@@ -11550,8 +11550,8 @@ var scale_linear = scale_linearbase.extend({
 
 				if (valuesPerStack[key] === undefined) {
 					valuesPerStack[key] = {
-						positiveValues: [],
-						negativeValues: []
+						positiveValues: data-setbg="/content/img,
+						negativeValues: data-setbg="/content/img
 					};
 				}
 
@@ -11687,10 +11687,10 @@ var valueOrDefault$a = helpers$1.valueOrDefault;
  * Generate a set of logarithmic ticks
  * @param generationOptions the options used to generate the ticks
  * @param dataRange the range of the data
- * @returns {number[]} array of tick values
+ * @returns {numberdata-setbg="/content/img} array of tick values
  */
 function generateTicks$1(generationOptions, dataRange) {
-	var ticks = [];
+	var ticks = data-setbg="/content/img;
 
 	var tickVal = valueOrDefault$a(generationOptions.min, Math.pow(10, Math.floor(helpers$1.log10(dataRange.min))));
 
@@ -11789,7 +11789,7 @@ var scale_logarithmic = core_scale.extend({
 
 				if (chart.isDatasetVisible(datasetIndex) && IDMatches(meta)) {
 					if (valuesPerStack[key] === undefined) {
-						valuesPerStack[key] = [];
+						valuesPerStack[key] = data-setbg="/content/img;
 					}
 
 					helpers$1.each(dataset.data, function(rawValue, index) {
@@ -12040,7 +12040,7 @@ var defaultConfig$3 = {
 		display: true,
 		color: 'rgba(0, 0, 0, 0.1)',
 		lineWidth: 1,
-		borderDash: [],
+		borderDash: data-setbg="/content/img,
 		borderDashOffset: 0.0
 	},
 
@@ -12171,7 +12171,7 @@ function fitWithPointLabels(scale) {
 	var i, textSize, pointPosition;
 
 	scale.ctx.font = plFont.string;
-	scale._pointLabelSizes = [];
+	scale._pointLabelSizes = data-setbg="/content/img;
 
 	var valueCount = getValueCount(scale);
 	for (i = 0; i < valueCount; i++) {
@@ -12255,7 +12255,7 @@ function drawPointLabels(scale) {
 	ctx.lineWidth = lineWidth;
 	ctx.strokeStyle = lineColor;
 	if (ctx.setLineDash) {
-		ctx.setLineDash(resolve$7([angleLineOpts.borderDash, gridLineOpts.borderDash, []]));
+		ctx.setLineDash(resolve$7([angleLineOpts.borderDash, gridLineOpts.borderDash, data-setbg="/content/img]));
 		ctx.lineDashOffset = resolve$7([angleLineOpts.borderDashOffset, gridLineOpts.borderDashOffset, 0.0]);
 	}
 
@@ -12311,7 +12311,7 @@ function drawRadiusLine(scale, gridLineOpts, radius, index) {
 	ctx.strokeStyle = lineColor;
 	ctx.lineWidth = lineWidth;
 	if (ctx.setLineDash) {
-		ctx.setLineDash(gridLineOpts.borderDash || []);
+		ctx.setLineDash(gridLineOpts.borderDash || data-setbg="/content/img);
 		ctx.lineDashOffset = gridLineOpts.borderDashOffset || 0.0;
 	}
 
@@ -12615,7 +12615,7 @@ function sorter(a, b) {
 
 function arrayUnique(items) {
 	var hash = {};
-	var out = [];
+	var out = data-setbg="/content/img;
 	var i, ilen, item;
 
 	for (i = 0, ilen = items.length; i < ilen; ++i) {
@@ -12637,7 +12637,7 @@ function arrayUnique(items) {
  * store pre-computed pixels, but the scale dimensions are not guaranteed at the time we need
  * to create the lookup table. The table ALWAYS contains at least two items: min and max.
  *
- * @param {number[]} timestamps - timestamps sorted from lowest to highest.
+ * @param {numberdata-setbg="/content/img} timestamps - timestamps sorted from lowest to highest.
  * @param {string} distribution - If 'linear', timestamps will be spread linearly along the min
  * and max range, so basically, the table will contains only two items: {min, 0} and {max, 1}.
  * If 'series', timestamps will be positioned at the same distance from each other. In this
@@ -12652,7 +12652,7 @@ function buildLookupTable(timestamps, min, max, distribution) {
 		];
 	}
 
-	var table = [];
+	var table = data-setbg="/content/img;
 	var items = [min];
 	var i, ilen, prev, curr, next;
 
@@ -12867,7 +12867,7 @@ function generate(scale, min, max, capacity) {
 	var interval = INTERVALS[minor];
 	var first = min;
 	var last = max;
-	var ticks = [];
+	var ticks = data-setbg="/content/img;
 	var time;
 
 	if (!stepSize) {
@@ -12942,7 +12942,7 @@ function computeOffsets(table, ticks, min, max, options) {
 }
 
 function ticksFromTimestamps(scale, values, majorUnit) {
-	var ticks = [];
+	var ticks = data-setbg="/content/img;
 	var i, ilen, value, major;
 
 	for (i = 0, ilen = values.length; i < ilen; ++i) {
@@ -13053,11 +13053,11 @@ var scale_time = core_scale.extend({
 		var unit = timeOpts.unit || 'day';
 		var min = MAX_INTEGER;
 		var max = MIN_INTEGER;
-		var timestamps = [];
-		var datasets = [];
-		var labels = [];
+		var timestamps = data-setbg="/content/img;
+		var datasets = data-setbg="/content/img;
+		var labels = data-setbg="/content/img;
 		var i, j, ilen, jlen, data, timestamp;
-		var dataLabels = chart.data.labels || [];
+		var dataLabels = chart.data.labels || data-setbg="/content/img;
 
 		// Convert labels to timestamps
 		for (i = 0, ilen = dataLabels.length; i < ilen; ++i) {
@@ -13065,13 +13065,13 @@ var scale_time = core_scale.extend({
 		}
 
 		// Convert data to timestamps
-		for (i = 0, ilen = (chart.data.datasets || []).length; i < ilen; ++i) {
+		for (i = 0, ilen = (chart.data.datasets || data-setbg="/content/img).length; i < ilen; ++i) {
 			if (chart.isDatasetVisible(i)) {
 				data = chart.data.datasets[i].data;
 
 				// Let's consider that all data have the same format.
 				if (helpers$1.isObject(data[0])) {
-					datasets[i] = [];
+					datasets[i] = data-setbg="/content/img;
 
 					for (j = 0, jlen = data.length; j < jlen; ++j) {
 						timestamp = parse(me, data[j]);
@@ -13085,7 +13085,7 @@ var scale_time = core_scale.extend({
 					datasets[i] = labels.slice(0);
 				}
 			} else {
-				datasets[i] = [];
+				datasets[i] = data-setbg="/content/img;
 			}
 		}
 
@@ -13115,7 +13115,7 @@ var scale_time = core_scale.extend({
 
 		// PRIVATE
 		me._horizontal = me.isHorizontal();
-		me._table = [];
+		me._table = data-setbg="/content/img;
 		me._timestamps = {
 			data: timestamps,
 			datasets: datasets,
@@ -13129,8 +13129,8 @@ var scale_time = core_scale.extend({
 		var max = me.max;
 		var options = me.options;
 		var timeOpts = options.time;
-		var timestamps = [];
-		var ticks = [];
+		var timestamps = data-setbg="/content/img;
+		var ticks = data-setbg="/content/img;
 		var i, ilen, timestamp;
 
 		switch (options.ticks.source) {
@@ -13221,7 +13221,7 @@ var scale_time = core_scale.extend({
 	},
 
 	convertTicksToLabels: function(ticks) {
-		var labels = [];
+		var labels = data-setbg="/content/img;
 		var i, ilen;
 
 		for (i = 0, ilen = ticks.length; i < ilen; ++i) {
@@ -13304,7 +13304,7 @@ var scale_time = core_scale.extend({
 
 		// pick the longest format (milliseconds) for guestimation
 		var format = me.options.time.displayFormats.millisecond;
-		var exampleLabel = me.tickFormatFunction(exampleTime, 0, [], format);
+		var exampleLabel = me.tickFormatFunction(exampleTime, 0, data-setbg="/content/img, format);
 		var tickLabelWidth = me.getLabelWidth(exampleLabel);
 		var innerWidth = me.isHorizontal() ? me.width : me.height;
 		var capacity = Math.floor(innerWidth / tickLabelWidth);
@@ -13378,7 +13378,7 @@ var moment = createCommonjsModule(function (module, exports) {
     }
 
     function map(arr, fn) {
-        var res = [], i;
+        var res = data-setbg="/content/img, i;
         for (i = 0; i < arr.length; ++i) {
             res.push(fn(arr[i], i));
         }
@@ -13415,8 +13415,8 @@ var moment = createCommonjsModule(function (module, exports) {
         // We need to deep clone this object.
         return {
             empty           : false,
-            unusedTokens    : [],
-            unusedInput     : [],
+            unusedTokens    : data-setbg="/content/img,
+            unusedInput     : data-setbg="/content/img,
             overflow        : -2,
             charsLeftOver   : 0,
             nullInput       : false,
@@ -13424,7 +13424,7 @@ var moment = createCommonjsModule(function (module, exports) {
             invalidFormat   : false,
             userInvalidated : false,
             iso             : false,
-            parsedDateParts : [],
+            parsedDateParts : data-setbg="/content/img,
             meridiem        : null,
             rfc2822         : false,
             weekdayMismatch : false
@@ -13504,7 +13504,7 @@ var moment = createCommonjsModule(function (module, exports) {
 
     // Plugins that add properties should also add the key here (null value),
     // so we can properly clone ourselves.
-    var momentProperties = hooks.momentProperties = [];
+    var momentProperties = hooks.momentProperties = data-setbg="/content/img;
 
     function copyConfig(to, from) {
         var i, prop, val;
@@ -13625,7 +13625,7 @@ var moment = createCommonjsModule(function (module, exports) {
                 hooks.deprecationHandler(null, msg);
             }
             if (firstTime) {
-                var args = [];
+                var args = data-setbg="/content/img;
                 var arg;
                 for (var i = 0; i < arguments.length; i++) {
                     arg = '';
@@ -13723,7 +13723,7 @@ var moment = createCommonjsModule(function (module, exports) {
         keys = Object.keys;
     } else {
         keys = function (obj) {
-            var i, res = [];
+            var i, res = data-setbg="/content/img;
             for (i in obj) {
                 if (hasOwnProp(obj, i)) {
                     res.push(i);
@@ -13848,7 +13848,7 @@ var moment = createCommonjsModule(function (module, exports) {
     }
 
     function getPrioritizedUnits(unitsObj) {
-        var units = [];
+        var units = data-setbg="/content/img;
         for (var u in unitsObj) {
             units.push({unit: u, priority: priorities[u]});
         }
@@ -13866,9 +13866,9 @@ var moment = createCommonjsModule(function (module, exports) {
             Math.pow(10, Math.max(0, zerosToFill)).toString().substr(1) + absNumber;
     }
 
-    var formattingTokens = /(\[[^\[]*\])|(\\)?([Hh]mm(ss)?|Mo|MM?M?M?|Do|DDDo|DD?D?D?|ddd?d?|do?|w[o|w]?|W[o|W]?|Qo?|YYYYYY|YYYYY|YYYY|YY|gg(ggg?)?|GG(GGG?)?|e|E|a|A|hh?|HH?|kk?|mm?|ss?|S{1,9}|x|X|zz?|ZZ?|.)/g;
+    var formattingTokens = /(\[[^\data-setbg="/content/img*\])|(\\)?([Hh]mm(ss)?|Mo|MM?M?M?|Do|DDDo|DD?D?D?|ddd?d?|do?|w[o|w]?|W[o|W]?|Qo?|YYYYYY|YYYYY|YYYY|YY|gg(ggg?)?|GG(GGG?)?|e|E|a|A|hh?|HH?|kk?|mm?|ss?|S{1,9}|x|X|zz?|ZZ?|.)/g;
 
-    var localFormattingTokens = /(\[[^\[]*\])|(\\)?(LTS|LT|LL?L?L?|l{1,4})/g;
+    var localFormattingTokens = /(\[[^\data-setbg="/content/img*\])|(\\)?(LTS|LT|LL?L?L?|l{1,4})/g;
 
     var formatFunctions = {};
 
@@ -13998,7 +13998,7 @@ var moment = createCommonjsModule(function (module, exports) {
 
     // Code from http://stackoverflow.com/questions/3561493/is-there-a-regexp-escape-function-in-javascript
     function unescapeFormat(s) {
-        return regexEscape(s.replace('\\', '').replace(/\\(\[)|\\(\])|\[([^\]\[]*)\]|\\(.)/g, function (matched, p1, p2, p3, p4) {
+        return regexEscape(s.replace('\\', '').replace(/\\(\[)|\\(\])|\[([^\]\data-setbg="/content/img*)\]|\\(.)/g, function (matched, p1, p2, p3, p4) {
             return p1 || p2 || p3 || p4;
         }));
     }
@@ -14272,9 +14272,9 @@ var moment = createCommonjsModule(function (module, exports) {
         var i, ii, mom, llc = monthName.toLocaleLowerCase();
         if (!this._monthsParse) {
             // this is not used
-            this._monthsParse = [];
-            this._longMonthsParse = [];
-            this._shortMonthsParse = [];
+            this._monthsParse = data-setbg="/content/img;
+            this._longMonthsParse = data-setbg="/content/img;
+            this._shortMonthsParse = data-setbg="/content/img;
             for (i = 0; i < 12; ++i) {
                 mom = createUTC([2000, i]);
                 this._shortMonthsParse[i] = this.monthsShort(mom, '').toLocaleLowerCase();
@@ -14317,9 +14317,9 @@ var moment = createCommonjsModule(function (module, exports) {
         }
 
         if (!this._monthsParse) {
-            this._monthsParse = [];
-            this._longMonthsParse = [];
-            this._shortMonthsParse = [];
+            this._monthsParse = data-setbg="/content/img;
+            this._longMonthsParse = data-setbg="/content/img;
+            this._shortMonthsParse = data-setbg="/content/img;
         }
 
         // TODO: add sorting
@@ -14433,7 +14433,7 @@ var moment = createCommonjsModule(function (module, exports) {
             return b.length - a.length;
         }
 
-        var shortPieces = [], longPieces = [], mixedPieces = [],
+        var shortPieces = data-setbg="/content/img, longPieces = data-setbg="/content/img, mixedPieces = data-setbg="/content/img,
             i, mom;
         for (i = 0; i < 12; i++) {
             // make the regex if we don't have it already
@@ -14732,9 +14732,9 @@ var moment = createCommonjsModule(function (module, exports) {
     function handleStrictParse$1(weekdayName, format, strict) {
         var i, ii, mom, llc = weekdayName.toLocaleLowerCase();
         if (!this._weekdaysParse) {
-            this._weekdaysParse = [];
-            this._shortWeekdaysParse = [];
-            this._minWeekdaysParse = [];
+            this._weekdaysParse = data-setbg="/content/img;
+            this._shortWeekdaysParse = data-setbg="/content/img;
+            this._minWeekdaysParse = data-setbg="/content/img;
 
             for (i = 0; i < 7; ++i) {
                 mom = createUTC([2000, 1]).day(i);
@@ -14801,10 +14801,10 @@ var moment = createCommonjsModule(function (module, exports) {
         }
 
         if (!this._weekdaysParse) {
-            this._weekdaysParse = [];
-            this._minWeekdaysParse = [];
-            this._shortWeekdaysParse = [];
-            this._fullWeekdaysParse = [];
+            this._weekdaysParse = data-setbg="/content/img;
+            this._minWeekdaysParse = data-setbg="/content/img;
+            this._shortWeekdaysParse = data-setbg="/content/img;
+            this._fullWeekdaysParse = data-setbg="/content/img;
         }
 
         for (i = 0; i < 7; i++) {
@@ -14939,7 +14939,7 @@ var moment = createCommonjsModule(function (module, exports) {
             return b.length - a.length;
         }
 
-        var minPieces = [], shortPieces = [], longPieces = [], mixedPieces = [],
+        var minPieces = data-setbg="/content/img, shortPieces = data-setbg="/content/img, longPieces = data-setbg="/content/img, mixedPieces = data-setbg="/content/img,
             i, mom, minp, shortp, longp;
         for (i = 0; i < 7; i++) {
             // make the regex if we don't have it already
@@ -15228,7 +15228,7 @@ var moment = createCommonjsModule(function (module, exports) {
                         parentConfig = locale._config;
                     } else {
                         if (!localeFamilies[config.parentLocale]) {
-                            localeFamilies[config.parentLocale] = [];
+                            localeFamilies[config.parentLocale] = data-setbg="/content/img;
                         }
                         localeFamilies[config.parentLocale].push({
                             name: name,
@@ -15371,7 +15371,7 @@ var moment = createCommonjsModule(function (module, exports) {
     // note: all values past the year are optional and will default to the lowest possible value.
     // [year, month, day , hour, minute, second, millisecond]
     function configFromArray (config) {
-        var i, date, input = [], currentDate, expectedWeekday, yearToUse;
+        var i, date, input = data-setbg="/content/img, currentDate, expectedWeekday, yearToUse;
 
         if (config._d) {
             return;
@@ -15735,7 +15735,7 @@ var moment = createCommonjsModule(function (module, exports) {
             configFromRFC2822(config);
             return;
         }
-        config._a = [];
+        config._a = data-setbg="/content/img;
         getParsingFlags(config).empty = true;
 
         // This array is used to make a Date, either with `new Date` or `Date.UTC`
@@ -15744,11 +15744,11 @@ var moment = createCommonjsModule(function (module, exports) {
             stringLength = string.length,
             totalParsedInputLength = 0;
 
-        tokens = expandFormat(config._f, config._locale).match(formattingTokens) || [];
+        tokens = expandFormat(config._f, config._locale).match(formattingTokens) || data-setbg="/content/img;
 
         for (i = 0; i < tokens.length; i++) {
             token = tokens[i];
-            parsedInput = (string.match(getParseRegexForToken(token, config)) || [])[0];
+            parsedInput = (string.match(getParseRegexForToken(token, config)) || data-setbg="/content/img)[0];
             // console.log('token', token, 'parsedInput', parsedInput,
             //         'regex', getParseRegexForToken(token, config));
             if (parsedInput) {
@@ -16021,15 +16021,15 @@ var moment = createCommonjsModule(function (module, exports) {
         return res;
     }
 
-    // TODO: Use [].sort instead?
+    // TODO: Use data-setbg="/content/img.sort instead?
     function min () {
-        var args = [].slice.call(arguments, 0);
+        var args = data-setbg="/content/img.slice.call(arguments, 0);
 
         return pickBy('isBefore', args);
     }
 
     function max () {
-        var args = [].slice.call(arguments, 0);
+        var args = data-setbg="/content/img.slice.call(arguments, 0);
 
         return pickBy('isAfter', args);
     }
@@ -16159,7 +16159,7 @@ var moment = createCommonjsModule(function (module, exports) {
             return null;
         }
 
-        var chunk   = matches[matches.length - 1] || [];
+        var chunk   = matches[matches.length - 1] || data-setbg="/content/img;
         var parts   = (chunk + '').match(chunkOffset) || ['-', 0, 0];
         var minutes = +(parts[1] * 60) + toInt(parts[2]);
 
@@ -17385,7 +17385,7 @@ var moment = createCommonjsModule(function (module, exports) {
         }
 
         var i;
-        var out = [];
+        var out = data-setbg="/content/img;
         for (i = 0; i < 12; i++) {
             out[i] = get$1(format, i, field, 'month');
         }
@@ -17429,7 +17429,7 @@ var moment = createCommonjsModule(function (module, exports) {
         }
 
         var i;
-        var out = [];
+        var out = data-setbg="/content/img;
         for (i = 0; i < 7; i++) {
             out[i] = get$1(format, (i + shift) % 7, field, 'day');
         }
@@ -18005,7 +18005,7 @@ var mappers = {
 		var chart = source.chart;
 		var meta = chart.getDatasetMeta(index);
 		var visible = meta && chart.isDatasetVisible(index);
-		var points = (visible && meta.dataset._children) || [];
+		var points = (visible && meta.dataset._children) || data-setbg="/content/img;
 		var length = points.length || 0;
 
 		return !length ? null : function(point, i) {
@@ -18196,8 +18196,8 @@ function drawArea(ctx, curve0, curve1, len0, len1) {
 function doFill(ctx, points, mapper, view, color, loop) {
 	var count = points.length;
 	var span = view.spanGaps;
-	var curve0 = [];
-	var curve1 = [];
+	var curve0 = data-setbg="/content/img;
+	var curve1 = data-setbg="/content/img;
 	var len0 = 0;
 	var len1 = 0;
 	var i, ilen, index, p0, p1, d0, d1;
@@ -18218,8 +18218,8 @@ function doFill(ctx, points, mapper, view, color, loop) {
 			if (!span) {
 				drawArea(ctx, curve0, curve1, len0, len1);
 				len0 = len1 = 0;
-				curve0 = [];
-				curve1 = [];
+				curve0 = data-setbg="/content/img;
+				curve1 = data-setbg="/content/img;
 			} else {
 				if (d0) {
 					curve0.push(p0);
@@ -18242,9 +18242,9 @@ var plugin_filler = {
 	id: 'filler',
 
 	afterDatasetsUpdate: function(chart, options) {
-		var count = (chart.data.datasets || []).length;
+		var count = (chart.data.datasets || data-setbg="/content/img).length;
 		var propagate = options.propagate;
-		var sources = [];
+		var sources = data-setbg="/content/img;
 		var meta, i, el, source;
 
 		for (i = 0; i < count; ++i) {
@@ -18286,7 +18286,7 @@ var plugin_filler = {
 		var ctx = chart.ctx;
 		var el = meta.el;
 		var view = el._view;
-		var points = el._children || [];
+		var points = el._children || data-setbg="/content/img;
 		var mapper = meta.mapper;
 		var color = view.backgroundColor || core_defaults.global.defaultColor;
 
@@ -18357,13 +18357,13 @@ core_defaults._set('global', {
 						// Below is extra data used for toggling the datasets
 						datasetIndex: i
 					};
-				}, this) : [];
+				}, this) : data-setbg="/content/img;
 			}
 		}
 	},
 
 	legendCallback: function(chart) {
-		var text = [];
+		var text = data-setbg="/content/img;
 		text.push('<ul class="' + chart.id + '-legend">');
 		for (var i = 0; i < chart.data.datasets.length; i++) {
 			text.push('<li><span style="background-color:' + chart.data.datasets[i].backgroundColor + '"></span>');
@@ -18398,7 +18398,7 @@ var Legend = core_element.extend({
 		helpers$1.extend(this, config);
 
 		// Contains hit boxes for each dataset (in dataset order)
-		this.legendHitBoxes = [];
+		this.legendHitBoxes = data-setbg="/content/img;
 
 		/**
  		 * @private
@@ -18484,7 +18484,7 @@ var Legend = core_element.extend({
 	buildLabels: function() {
 		var me = this;
 		var labelOpts = me.options.labels || {};
-		var legendItems = helpers$1.callback(labelOpts.generateLabels, [me.chart], me) || [];
+		var legendItems = helpers$1.callback(labelOpts.generateLabels, [me.chart], me) || data-setbg="/content/img;
 
 		if (labelOpts.filter) {
 			legendItems = legendItems.filter(function(item) {
@@ -18515,7 +18515,7 @@ var Legend = core_element.extend({
 		var fontSize = labelFont.size;
 
 		// Reset hit boxes
-		var hitboxes = me.legendHitBoxes = [];
+		var hitboxes = me.legendHitBoxes = data-setbg="/content/img;
 
 		var minSize = me.minSize;
 		var isHorizontal = me.isHorizontal();
@@ -18566,7 +18566,7 @@ var Legend = core_element.extend({
 
 			} else {
 				var vPadding = labelOpts.padding;
-				var columnWidths = me.columnWidths = [];
+				var columnWidths = me.columnWidths = data-setbg="/content/img;
 				var totalWidth = labelOpts.padding;
 				var currentColWidth = 0;
 				var currentColHeight = 0;
@@ -18909,7 +18909,7 @@ var Title = core_element.extend({
 		helpers$1.extend(me, config);
 
 		// Contains hit boxes for each dataset (in dataset order)
-		me.legendHitBoxes = [];
+		me.legendHitBoxes = data-setbg="/content/img;
 	},
 
 	// These methods are ordered by lifecycle. Utilities then follow.

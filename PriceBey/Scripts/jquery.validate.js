@@ -125,7 +125,7 @@ $.extend( $.fn, {
 		if ( $( this[ 0 ] ).is( "form" ) ) {
 			valid = this.validate().form();
 		} else {
-			errorList = [];
+			errorList = ;
 			valid = true;
 			validator = $( this[ 0 ].form ).validate();
 			this.each( function() {
@@ -279,8 +279,8 @@ $.extend( $.validator, {
 		errorElement: "label",
 		focusCleanup: false,
 		focusInvalid: true,
-		errorContainer: $( [] ),
-		errorLabelContainer: $( [] ),
+		errorContainer: $(  ),
+		errorLabelContainer: $(  ),
 		onsubmit: true,
 		ignore: ":hidden",
 		ignoreTitle: false,
@@ -608,7 +608,7 @@ $.extend( $.validator, {
 		focusInvalid: function() {
 			if ( this.settings.focusInvalid ) {
 				try {
-					$( this.findLastActive() || this.errorList.length && this.errorList[ 0 ].element || [] )
+					$( this.findLastActive() || this.errorList.length && this.errorList[ 0 ].element ||  )
 					.filter( ":visible" )
 					.focus()
 
@@ -669,16 +669,16 @@ $.extend( $.validator, {
 		},
 
 		resetInternals: function() {
-			this.successList = [];
-			this.errorList = [];
+			this.successList = ;
+			this.errorList = ;
 			this.errorMap = {};
-			this.toShow = $( [] );
-			this.toHide = $( [] );
+			this.toShow = $(  );
+			this.toHide = $(  );
 		},
 
 		reset: function() {
 			this.resetInternals();
-			this.currentElements = $( [] );
+			this.currentElements = $(  );
 		},
 
 		prepareForm: function() {

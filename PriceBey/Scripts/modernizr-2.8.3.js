@@ -85,7 +85,7 @@ window.Modernizr = (function( window, document, undefined ) {
     inputs = {},
     attrs = {},
 
-    classes = [],
+    classes = ,
 
     slice = classes.slice,
 

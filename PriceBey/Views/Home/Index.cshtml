@@ -1,8 +1,6 @@
-﻿@*<a href="./login.html">Login</a>*@
-    @*<a href="./Views/Home/About.cshtml">About Page</a>*@
-@*@Html.ActionLink("About Page", "About")*@
-
-
+﻿@{ 
+    ViewBag.Title = "Best Price Comparison Websit - PriceBey";
+}
 <!-- Hero Section Begin -->
 <section class="hero-section" style="margin-top:10px;">
     <div class="container-fluid">
@@ -12,75 +10,36 @@
             </div>
         </div>
     </div>
-    @*<div class="hero-items owl-carousel">
-            <div class="single-hero-items set-bg" data-setbg="/content/img/products/1.jpg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <span>Bag,kids</span>
-                            <h1>Black friday</h1>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore
-                            </p>
-                            <a href="#" class="primary-btn">Shop Now</a>
-                        </div>
-                    </div>
-                    <div class="off-card">
-                        <h2>Sale <span>50%</span></h2>
-                    </div>
-                </div>
-            </div>
-            <div class="single-hero-items set-bg" data-setbg="/content/img/laptop-2.jpg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <span>Bag,kids</span>
-                            <h1>Black friday</h1>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore
-                            </p>
-                            <a href="#" class="primary-btn">Shop Now</a>
-                        </div>
-                    </div>
-                    <div class="off-card">
-                        <h2>Sale <span>50%</span></h2>
-                    </div>
-                </div>
-            </div>
-        </div>*@
+
 </section>
 <!-- Hero Section End -->
 <!-- Banner Section Begin -->
-<div class="banner-section spad">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="single-banner">
-                    <img src="\content\img/banner-1.jpg" alt="my mobile">
-                    <div class="inner-text">
-                        <h4>Mobiles</h4>
-                        <ul>
-                            <li class="quick-view"><a href="#"></a></li>
-                        </ul>
-                    </div>
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="single-banner">
+                <img src="\content\img/banner-1.jpg" alt="my mobile">
+                <div class="inner-text">
+                    <h4><a href="/productslist/?ct=1">Mobiles</a></h4>
+                    <ul>
+                        <li class="quick-view"><a href="#"></a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="single-banner">
-                    <img src="~/content/img/power_bank.jpg" alt="">
-                    <div class="inner-text">
-                        <h4>Power Banks</h4>
-                    </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="single-banner">
+                <img src="~/content/img/power_bank.jpg" alt="">
+                <div class="inner-text">
+                    <h4><a href="/productslist/?ct=2">Power Banks</a></h4>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="single-banner">
-                    <img src="~/content/img/laptop.jpg" alt="">
-                    <div class="inner-text">
-                        <h4>Laptops</h4>
-                    </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="single-banner">
+                <img src="~/content/img/laptop.jpg" alt="">
+                <div class="inner-text">
+                    <h4><a href="/productslist/?ct=3">Laptops</a></h4>
                 </div>
             </div>
         </div>
@@ -100,45 +59,74 @@
             <div class="col-lg-12">
 
                 <div class="filter-control">
+
                     <ul>
                         <li class="active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Mobiles</li>
                         <li id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="true" i>Power Banks</li>
                         <li id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="true" i>Laptops</li>
                         <li id="pills-c4-tab" data-toggle="pill" href="#pills-c4" role="tab" aria-controls="pills-pr4cofile" aria-selected="true" i>Air Conditioners</li>
-
+                        <li id="pills-c4-tab" data-toggle="pill" href="#pills-c4" role="tab" aria-controls="pills-pr4cofile" aria-selected="true" i>Refrigerators</li>
+                        <li id="pills-c4-tab" data-toggle="pill" href="#pills-c4" role="tab" aria-controls="pills-pr4cofile" aria-selected="true" i>Smart TV</li>
+                        <li id="pills-c4-tab" data-toggle="pill" href="#pills-c4" role="tab" aria-controls="pills-pr4cofile" aria-selected="true" i>Usb Flash Drives</li>
                     </ul>
                 </div>
 
 
                 <div class="tab-content" id="pills-tabContent">
-                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <div class="tab-pane show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                         <div class="row">
                             @Html.Action("Products", "Home", new { id = 1 })
                         </div>
                     </div>
                     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                        <div class="product-slider owl-carousel">
+                        <div class="row">
                             @Html.Action("Products", "Home", new { id = 2 })
                         </div>
                     </div>
                     <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                        <div class="product-slider owl-carousel">
+                        <div class="row">
                             @Html.Action("Products", "Home", new { id = 3 })
                         </div>
                     </div>
                     <div class="tab-pane fade" id="pills-c4" role="tabpanel" aria-labelledby="pills-c4-tab">
-                        <div class="product-slider owl-carousel">
+                        <div class="row">
                             @Html.Action("Products", "Home", new { id = 4 })
+                        </div>
+                        <div class="tab-pane fade" id="pills-c4" role="tabpanel" aria-labelledby="pills-c4-tab">
+                            <div class="row">
+                                @Html.Action("Products", "Home", new { id = 5 })
+                            </div>
+                            <div class="tab-pane fade" id="pills-c4" role="tabpanel" aria-labelledby="pills-c4-tab">
+                                <div class="row">
+                                    @Html.Action("Products", "Home", new { id = 6 })
+                                </div>
+                                <div class="tab-pane fade" id="pills-c4" role="tabpanel" aria-labelledby="pills-c4-tab">
+                                    <div class="row">
+                                        @Html.Action("Products", "Home", new { id = 7 })
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
 
         </div>
     </div>
 </section>
 <!-- Man Banner Section End -->
 
-@*<a href="~/Views/Home/About.cshtml">About Page</a>
-<div>@Html.ActionLink("About Page", "About")</div>*@
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $("div").on("click", ".filter-control li", function () {
+                $(".filter-control li").removeClass('active');
+                $(this).addClass('active');
+                var href = $(this).attr('href');
+
+                $(".tab-pane").removeClass('active').removeClass('show');
+                $(href).addClass('active').addClass('show');
+            });
+        });
+    </script>
+}
