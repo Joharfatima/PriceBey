@@ -1,12 +1,16 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
+using System.Web;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using PriceBey.Models;
-using System;
-using System.Security.Claims;
-using System.Threading.Tasks;
 
 namespace PriceBey
 {
@@ -36,7 +40,7 @@ namespace PriceBey
         {
         }
 
-        public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)
+        public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context) 
         {
             var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<ApplicationDbContext>()));
             // Configure validation logic for usernames
@@ -51,8 +55,8 @@ namespace PriceBey
             {
                 RequiredLength = 3,
                 //RequireNonLetterOrDigit = true,
-                // RequireDigit = true,
-                //RequireLowercase = true,
+               // RequireDigit = true,
+               //RequireLowercase = true,
                 //RequireUppercase = true,
             };
 
@@ -77,7 +81,7 @@ namespace PriceBey
             var dataProtectionProvider = options.DataProtectionProvider;
             if (dataProtectionProvider != null)
             {
-                manager.UserTokenProvider =
+                manager.UserTokenProvider = 
                     new DataProtectorTokenProvider<ApplicationUser>(dataProtectionProvider.Create("ASP.NET Identity"));
             }
             return manager;

@@ -1,7 +1,10 @@
 ﻿using PriceBey.Models;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace PriceBey.PriceUpdater
 {
@@ -15,32 +18,36 @@ namespace PriceBey.PriceUpdater
 
             try
             {
-                using (WebClient client = new WebClient())
-                {
+                using (WebClient client = new WebClient()) {
 
                     var html = client.DownloadString(product.Url);
 
                     var doc = new HtmlAgilityPack.HtmlDocument();
                     doc.LoadHtml(html);
 
-                    var orgNode = doc.DocumentNode.SelectSingleNode("//div[@id='ProductDetails']//div[@class='ActualPrice']");
+                    var stockNode = doc.DocumentNode.SelectSingleNode("//div[@id='ProductDetails']//a[@class='in_stock' and @style='display:;']");
 
-                    if (orgNode != null)
+                    if (stockNode == null)
                     {
-                        var priceText = orgNode.InnerText;
+                        var orgNode = doc.DocumentNode.SelectSingleNode("//div[@id='ProductDetails']//div[@class='ActualPrice']");
 
-                        var price = DownloadHTML.StringToDecimal(priceText);
-
-                        if (price > 0)
+                        if (orgNode != null)
                         {
-                            product.Price = price;
-                            product.IsActive = true;
+                            var priceText = orgNode.InnerText;
+
+                            var price = DownloadHTML.StringToDecimal(priceText);
+
+                            if (price > 0)
+                            {
+                                product.Price = price;
+                                product.IsActive = true;
+                            }
                         }
                     }
                 }
 
 
-
+               
             }
             catch (Exception ex)
             {

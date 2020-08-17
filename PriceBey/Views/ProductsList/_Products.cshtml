@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<PriceBey.Models.Product>
 
-    @foreach (var item in Model)
-    {
+@foreach (var item in Model)
+{
     <div class="col-lg-4 col-sm-6">
         <div class="product-item">
             <div class="pi-pic">
@@ -20,59 +20,77 @@
                 <div>
                     <small>Available at @item.Prices.Count() Stores</small>
                 </div>
-
-                @*<div class="icon">
-            <i class="icon_heart_alt"></i>
-        </div>
-        <ul>
-            <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-            <li class="quick-view"><a href="#">+ Quick View</a></li>
-            <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-        </ul>*@
-            </div>
-            @*<div class="pi-text">
-        <div class="catagory-name">@item.Category.Name</div>
-
-        <a href="#">
-            <h5>@item.Name</h5>
-        </a>*@
-            <div class="compare-prices">
-                <div class="hd">
-                    Compare Prices
-                </div>
-
-                @foreach (var price in item.Prices.OrderBy(a => a.Price))
-                {
-                    <div class="price-row">
-                        <a href="/ProductDetail?id=@item.ID&store=@price.StoreId" target="_self">
-                            <div class="img">
-                                @if (@price.Store.Logo != null)
-                                {
-                                    <img alt="@price.Store.Name" src="~/StoreLogos/@price.StoreId/@price.Store.Logo">
-                                }
-                                else
-                                {
-                                    <span>@price.Store.Name</span>
-                                }
-
-                            </div>
-                            <div class="price">
-                                <span>Rs.</span> @price.Price
-                            </div>
-                        </a>
+                @*Multiple prices shown on hover*@
+                <div class="compare-prices">
+                    <div class="hd">
+                        Compare Prices
                     </div>
-                }
 
+                    @foreach (var price in item.Prices.Where(a=>a.IsActive==true).OrderBy(a => a.Price))
+                    {
+                        <div class="price-row">
+                            <a href="/ProductDetail?id=@item.ID&store=@price.StoreId" target="_self">
+                                <div class="img">
+                                    @if (@price.Store.Logo != null)
+                                    {
+                                        <img alt="@price.Store.Name" src="~/StoreLogos/@price.StoreId/@price.Store.Logo">
+                                    }
+                                    else
+                                    {
+                                        <span>@price.Store.Name</span>
+                                    }
+
+                                </div>
+                                <div class="price">
+                                    <span>Rs.</span> @price.Price
+                                </div>
+                            </a>
+                        </div>
+                    }
+
+                </div>
+                @*Multiple prices shown on hover*@
             </div>
-            @*<div class="product-price">
-                @foreach (var price in item.Prices.OrderBy(a => a.Price))
-                {
-                    <p> @price.Price @price.Store.Name </p>
-                }
-            </div>*@
         </div>
-            </div>
-    @*</div>*@
-    }
+    </div>
+
+    @*<div class="col-lg-4 col-sm-6">
+            <div class="product-item">
+                <div class="pi-pic">
+                    <img src="@item.Image" alt="">
+                </div>
+                <div class="pi-text">
+                        <div class="catagory-name">@item.Category.Name</div>
+
+                        <a href="#">
+                            <h5>@item.Name</h5>
+                        </a>
+
+
+                        <div class="icon">
+                            <i class="icon_heart_alt"></i>
+                        </div>
+                        <ul>
+                            <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                            <li class="quick-view"><a href="#">+ Quick View</a></li>
+                            <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="pi-text">
+                        <div class="catagory-name">@item.Category.Name</div>
+
+                        <a href="#">
+                            <h5>@item.Name</h5>
+                        </a>
+                        <div class="product-price">
+                            @foreach (var price in item.Prices.OrderBy(a => a.Price))
+                            {
+                                <p> @price.Price @price.Store.Name </p>
+                            }
+                        </div>
+                    </div>
+                </div>
+        </div>*@
+}
 
 

@@ -1,7 +1,10 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net;
+using System.Web;
 
 namespace PriceBey.PriceUpdater
 {
@@ -53,8 +56,8 @@ namespace PriceBey.PriceUpdater
 
             try
             {
-                text = text.ToUpper().Trim().Trim('.').Replace("PKR", "").Replace("RS.", "").Replace("RS", "").Replace(".00", "")
-                    .Replace("/-", "").Trim().Replace(",", "").Replace(" ", "");
+                text = text.ToUpper().Trim().Trim('.').Replace("PKR", "").Replace("RS.", "").Replace("RS", "").Replace(".00","")
+                    .Replace("/-","").Trim().Replace(",", "").Replace(" ", "");
 
                 Decimal.TryParse(text, out number);
 

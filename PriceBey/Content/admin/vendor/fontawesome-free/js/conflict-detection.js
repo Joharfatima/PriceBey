@@ -74,7 +74,7 @@
   var IS_DOM = !!DOCUMENT.documentElement && !!DOCUMENT.head && typeof DOCUMENT.addEventListener === 'function' && typeof DOCUMENT.createElement === 'function';
   var IS_IE = ~userAgent.indexOf('MSIE') || ~userAgent.indexOf('Trident/');
 
-  var functions = ;
+  var functions = [];
 
   var listener = function listener() {
     DOCUMENT.removeEventListener('DOMContentLoaded', listener);
@@ -411,7 +411,7 @@
 
       function rstr2binl(input) {
         var i;
-        var output = ;
+        var output = [];
         output[(input.length >> 2) - 1] = undefined;
 
         for (i = 0; i < output.length; i += 1) {
@@ -449,8 +449,8 @@
       function rstrHMACMD5(key, data) {
         var i;
         var bkey = rstr2binl(key);
-        var ipad = ;
-        var opad = ;
+        var ipad = [];
+        var opad = [];
         var hash;
         ipad[15] = opad[15] = undefined;
 

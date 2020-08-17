@@ -1,7 +1,11 @@
-﻿using PriceBey.Models;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
+using Antlr.Runtime;
+using PriceBey.Models;
 
 namespace PriceBey.Controllers
 {
@@ -9,7 +13,7 @@ namespace PriceBey.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-
+    
         // GET: ProductDetail
         public ActionResult Index(int? id)
         {
@@ -18,7 +22,10 @@ namespace PriceBey.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Product product = db.Products.Include("Brand").Include("Category").Include("Prices").Include("Prices.Store").Where(a => a.ID == id).Single();
+            Product product =  db.Products.Include("Brand").Include("Category").Include("Prices")
+                .Include("Prices.Store")
+                .Where(a => a.ID ==id && a.Prices.Where(c => c.IsActive
+                == true).Count()>0).Single();
 
             if (product == null)
             {
@@ -28,6 +35,6 @@ namespace PriceBey.Controllers
             return View(product);
         }
 
-
+       
     }
 }

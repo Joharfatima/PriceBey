@@ -1,7 +1,10 @@
 ﻿using PriceBey.Models;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace PriceBey.PriceUpdater
 {
@@ -15,8 +18,7 @@ namespace PriceBey.PriceUpdater
 
             try
             {
-                using (WebClient client = new WebClient())
-                {
+                using (WebClient client = new WebClient()) {
                     var html = client.DownloadString(product.Url);
 
                     var doc = new HtmlAgilityPack.HtmlDocument();
@@ -37,7 +39,7 @@ namespace PriceBey.PriceUpdater
                         }
                     }
                 }
-
+               
             }
             catch (Exception ex)
             {

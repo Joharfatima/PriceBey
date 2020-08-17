@@ -26,7 +26,7 @@
                         Compare Prices
                     </div>
 
-                    @foreach (var price in item.Prices.OrderBy(a => a.Price))
+                    @foreach (var price in item.Prices.Where(a=>a.IsActive==true).OrderBy(a => a.Price))
                     {
                         <div class="price-row">
                             <a href="/ProductDetail?id=@item.ID&store=@price.StoreId" target="_self">
@@ -54,27 +54,5 @@
         </div>
     </div>
 
-    @*<div class="product-item">
-            <div class="pi-pic">
-                <img src="@item.Image" alt="">
-                <div class="sale">Sale</div>
-                <div class="icon">
-                    <i class="icon_heart_alt"></i>
-                </div>
-                <ul>
-                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                    <li class="quick-view"><a href="#">+ Quick View</a></li>
-                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                </ul>
-            </div>
-            <div class="pi-text">
-                <div class="catagory-name">@item.Category.Name</div>
-                <a href="#">
-                    <h5>@item.Name</h5>
-                </a>
-                <div class="product-price">
-                   RS @item.Prices.Where(a=>a.Price!=null).Min(a=>a.Price)
-                </div>
-            </div>
-        </div>*@
+ 
 }

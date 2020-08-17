@@ -188,11 +188,15 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductsServiceController.cs" />
+    <Compile Include="Areas\Customer\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Customer\CustomerAreaRegistration.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Areas\Admin\Controllers\BrandsController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\ColorsController.cs" />
+    <Compile Include="Controllers\Api\ProductsController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -202,6 +206,7 @@
     <Compile Include="Controllers\ProductDetailController.cs" />
     <Compile Include="Controllers\ProductsListController.cs" />
     <Compile Include="Areas\Admin\Controllers\StoresController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\SubscribeController.cs" />
     <Compile Include="Controllers\TermsController.cs" />
     <Compile Include="DataContext.cs" />
@@ -1886,6 +1891,7 @@
     <Content Include="Content\img\cart-page\product-1.jpg" />
     <Content Include="Content\img\cart-page\product-2.jpg" />
     <Content Include="Content\img\cart-page\product-3.jpg" />
+    <Content Include="Content\img\fav.png" />
     <Content Include="Content\img\flag-1.jpg" />
     <Content Include="Content\img\flag-2.jpg" />
     <Content Include="Content\img\footer-logo.png" />
@@ -1912,6 +1918,7 @@
     <Content Include="Content\img\logo-carousel\logo-3.png" />
     <Content Include="Content\img\logo-carousel\logo-4.png" />
     <Content Include="Content\img\logo-carousel\logo-5.png" />
+    <Content Include="Content\img\logo-v.png" />
     <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\payment-method.png" />
     <Content Include="Content\img\power_bank.jpg" />
@@ -2151,6 +2158,11 @@
     <Content Include="Content\admin\vendor\jquery\jquery.slim.min.map" />
     <Content Include="Content\img\powerbank.webp" />
     <Content Include="Areas\Admin\Views\ProductsService\Index %281%29.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductsService\Index.cshtml" />
+    <Content Include="Areas\Customer\Views\Dashboard\Index.cshtml" />
+    <Content Include="Areas\Customer\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Customer\Views\web.config" />
+    <Content Include="Areas\Customer\Views\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2248,12 +2260,16 @@
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Terms\Index.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Register\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Views\Default\" />
     <Folder Include="Areas\Admin\Views\Login\" />
+    <Folder Include="Areas\Customer\Models\" />
     <Folder Include="Views\Subscribe\" />
   </ItemGroup>
   <ItemGroup>
@@ -2287,7 +2303,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>14082</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:44321/</IISUrl>
+          <IISUrl>http://localhost:44322/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

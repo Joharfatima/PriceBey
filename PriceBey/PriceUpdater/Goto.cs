@@ -1,7 +1,10 @@
 ﻿using PriceBey.Models;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace PriceBey.PriceUpdater
 {
@@ -24,7 +27,7 @@ namespace PriceBey.PriceUpdater
 
                     var outOfStockNode = doc.DocumentNode.SelectSingleNode("//div[@class='product-out-of-stock']");
 
-                    if (outOfStockNode == null)
+                    if(outOfStockNode == null)
                     {
                         var orgNode = doc.DocumentNode.SelectSingleNode("//span[@id='specialPriceBox']//span");
 
@@ -41,7 +44,7 @@ namespace PriceBey.PriceUpdater
                             }
                         }
                     }
-
+                   
                 }
 
             }
