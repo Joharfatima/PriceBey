@@ -4,6 +4,7 @@
     var priceCount = 0;
 }
 
+
 <section class="product-shop spad page-details">
     <div class="container">
         <div class="row">
@@ -28,46 +29,54 @@
                             </div>
                             <div class="pd-desc">
 
-                                @foreach (var price in Model.Prices.Where(a=>a.IsActive==true).OrderBy(a => a.Price))
+                                @foreach (var price in Model.Prices.Where(a => a.IsActive == true).OrderBy(a => a.Price))
                                 {
-                                    <div class="cheapest-store row">
-                                        <div class="col-xs-4 col-lg-4 logo">
-                                            @if (price.Store.Logo != null)
-                                            {
-                                                <img alt="@price.Store.Name" src="~/StoreLogos/@price.StoreId/@price.Store.Logo">
-                                            }
-                                            else
-                                            {
-                                                <span>@price.Store.Name</span>
-                                            }
-
-                                        </div>
-                                        <div class="col-xs-4 col-lg-4 prices text-center">
-                                            <div class="price-current"><span>PKR </span>@price.Price</div>
-
-                                            @if (priceCount == 0)
-                                            {
-                                                <div class="best-tag">
-                                                    BEST PRICE
-                                                </div>
-                                            }
-
-                                        </div>
-                                        <div class="col-xs-4 col-lg-4 text-right">
-
-                                            <button type="button" class="btn btn-danger mb-2">
-                                                Book Now
-                                                <i class="fa fa-shopping-cart"></i>
-                                            </button>
-
-                                            <a href="@price.Url" target="_blank" class="btn btn-info btn-sm ">
-                                                Go To Store
-                                                <i class="fa fa-right"></i>
-                                            </a>
-
-                                        </div>
+                                <div class="cheapest-store row">
+                                    <div class="col-xs-4 col-lg-4 logo">
+                                        @if (price.Store.Logo != null)
+                                        {
+                                            <img alt="@price.Store.Name" src="~/StoreLogos/@price.StoreId/@price.Store.Logo">
+                                        }
+                                        else
+                                        {
+                                            <span>@price.Store.Name</span>
+                                        }
 
                                     </div>
+                                    <div class="col-xs-4 col-lg-4 prices text-center">
+                                        <div class="price-current"><span>PKR </span>@price.Price</div>
+
+                                        @if (priceCount == 0)
+                                        {
+                                            <div class="best-tag">
+                                                BEST PRICE
+                                            </div>
+                                        }
+
+                                    </div>
+                                    <div class="col-xs-4 col-lg-4 text-right">
+
+                                        <button type="button" class="btn btn-danger mb-2">
+                                            Book Now
+                                            <i class="fa fa-shopping-cart"></i>
+                                        </button>
+
+                                        <a href="/PriceClickHistory/Create/@price.ID?url=@price.Url" target="_blank" class="btn btn-info btn-sm ">
+                                            Go To Store
+                                            <i class="fa fa-right"></i>
+                                        </a>
+                                        @*<div class="col-lg-4">
+                <div class="newslatter-item">
+                    <form action="/PriceClickHistory/Create" class="PriceClickHistory-form" method="post">
+                        <input type="text" name="ProductPriceId" required="" placeholder="Enter ProductPriceId">
+
+                        <button type="submit">Go To Store</button>
+                    </form>
+                </div>
+            </div>*@
+
+                                    </div>
+                                </div>
 
 
                                     priceCount++;
@@ -75,36 +84,37 @@
 
 
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-tab">
-                        <div class="tab-item">
-                            <ul class="nav" role="tablist">
-                                <li>
-                                    <a class="active" data-toggle="tab" href="#tab-1" role="tab">DESCRIPTION</a>
-                                </li>
+                                    </div>
+                              
+                          
+                            <div class="product-tab">
+                                <div class="tab-item">
+                                    <ul class="nav" role="tablist">
+                                        <li>
+                                            <a class="active" data-toggle="tab" href="#tab-1" role="tab">DESCRIPTION</a>
+                                        </li>
 
 
-                            </ul>
-                        </div>
-                        <div class="tab-item-content">
-                            <div class="tab-content">
-                                <div class="tab-pane fade-in active" id="tab-1" role="tabpanel">
-                                    <div class="product-content">
-                                        @if (!string.IsNullOrEmpty(Model.Description) && Model.Description!="NULL")
-                                        {
-                                            @Html.Raw(Model.Description)
-                                        }
+                                    </ul>
+                                </div>
+                                <div class="tab-item-content">
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade-in active" id="tab-1" role="tabpanel">
+                                            <div class="product-content">
+                                                @if (!string.IsNullOrEmpty(Model.Description) && Model.Description != "NULL")
+                                                {
+                                                    @Html.Raw(Model.Description)
+                                                }
+                                            </div>
+                                        </div>
+
+
                                     </div>
                                 </div>
-
-
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                        
+                    
+              
+            
+        
 </section>

@@ -117,3 +117,5 @@ C:\Users\Dev\source\repos\PriceBey\PriceBey\bin\WebDriver.dll
 C:\Users\Dev\source\repos\PriceBey\PriceBey\bin\HtmlAgilityPack.pdb
 C:\Users\Dev\source\repos\PriceBey\PriceBey\bin\HtmlAgilityPack.xml
 C:\Users\Dev\source\repos\PriceBey\PriceBey\bin\WebDriver.xml
+C:\Users\Dev\source\repos\PriceBey\PriceBey\obj\Debug\PriceBey.Migrations.db.resources
+C:\Users\Dev\source\repos\PriceBey\PriceBey\obj\Debug\PriceBey.csproj.GenerateResource.cache

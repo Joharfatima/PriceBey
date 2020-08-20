@@ -188,6 +188,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PriceClickHistoriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsServiceController.cs" />
     <Compile Include="Areas\Customer\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Customer\CustomerAreaRegistration.cs" />
@@ -203,6 +204,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductPricesController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\PriceClickHistory.cs" />
     <Compile Include="Controllers\ProductDetailController.cs" />
     <Compile Include="Controllers\ProductsListController.cs" />
     <Compile Include="Areas\Admin\Controllers\StoresController.cs" />
@@ -213,6 +215,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008201206233_ db.cs" />
+    <Compile Include="Migrations\202008201206233_ db.Designer.cs">
+      <DependentUpon>202008201206233_ db.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Brand.cs" />
@@ -223,6 +230,7 @@
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductPrice.cs" />
     <Compile Include="Models\Store.cs" />
+    <Compile Include="Models\PriceClickHistory.cs" />
     <Compile Include="Models\Subscriber.cs" />
     <Compile Include="MyFirstTable.cs" />
     <Compile Include="PriceUpdater\Daraz.cs" />
@@ -2163,6 +2171,11 @@
     <Content Include="Areas\Customer\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Customer\Views\web.config" />
     <Content Include="Areas\Customer\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\PriceClickHistories\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\PriceClickHistories\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\PriceClickHistories\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\PriceClickHistories\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\PriceClickHistories\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2263,12 +2276,14 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Register\Index.cshtml" />
+    <Content Include="Views\PriceClickHistory\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Views\Default\" />
     <Folder Include="Areas\Admin\Views\Login\" />
+    <Folder Include="Areas\Admin\Views\PriceClickHistory\" />
     <Folder Include="Areas\Customer\Models\" />
     <Folder Include="Views\Subscribe\" />
   </ItemGroup>
@@ -2284,6 +2299,11 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202008201206233_ db.resx">
+      <DependentUpon>202008201206233_ db.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -25,6 +25,8 @@ namespace PriceBey.Models
 
         public DbSet<Subscriber> Subscribers { get; set; }
 
+        public DbSet<PriceClickHistory> PriceClickHistory { get; set; }
+
         //public static ApplicationDbContext Create()
         //{
         //    return new ApplicationDbContext();
