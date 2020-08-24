@@ -2653,7 +2653,7 @@ ol {
             }
 
             .cart-table table tr td.cart-pic {
-                width: 21%;
+                width: 12%;
             }
 
             .cart-table table tr td.cart-title {
@@ -2665,7 +2665,7 @@ ol {
                 }
 
             .cart-table table tr td.p-price {
-                width: 16%;
+                width: 12%;
             }
 
             .cart-table table tr td.p-price,
@@ -2676,7 +2676,7 @@ ol {
             }
 
             .cart-table table tr td.qua-col {
-                width: 16%;
+                width: 10%;
             }
 
                 .cart-table table tr td.qua-col .quantity {
@@ -2727,7 +2727,7 @@ ol {
             .cart-table table tr td.close-td {
                 font-size: 16px;
                 color: #252525;
-                width: 8%;
+                width: 12%;
             }
 
                 .cart-table table tr td.close-td i {

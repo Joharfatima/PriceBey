@@ -86,6 +86,7 @@ namespace PriceBey.Controllers
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
                 default:
+                    ViewBag.ReturnUrl = returnUrl;
                     ModelState.AddModelError("", "Invalid login attempt.");
                     return View(model);
             }

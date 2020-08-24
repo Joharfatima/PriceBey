@@ -1,0 +1,92 @@
+﻿@model PriceBey.Models.ProductBooking
+@{
+    ViewBag.Title = "Booking Detail";
+}
+
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h3 class="h3 mb-0 text-gray-800">Booking Detail</h3>
+    <a href="/admin/bookings" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+        <i class="fas fa-backward fa-sm text-white-50"></i>
+        Back to Bookings
+    </a>
+</div>
+
+<div class="row">
+    <div class="col">
+
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary"> @Model.ProductPrice.Product.Name x @Model.Quantity</h6>
+            </div>
+            <div class="card-body">
+              <table class="table table-bordered " >
+                 
+                  <tbody>
+                      <tr>
+                          <td>
+                              PRICE
+                          </td>
+                          <td>
+                              <strong> @Model.ProductPrice.Price </strong>(RS)
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              TOTAL
+                          </td>
+                          <td>
+                              <strong> @(Math.Round(Model.ProductPrice.Price * Model.Quantity, 2)) </strong>(RS)
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              STATUS
+                          </td>
+                          <td>
+                              @Model.Status
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              DATE
+                          </td>
+                          <td>
+                              @Model.CreatedDate
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+            </div>
+
+        </div>
+        
+
+    </div>
+    <div class="col">
+        <div class="card mb-3 p-0 border-left-primary">
+            <div class="card-body">
+                <form action="/admin/bookings/detail/@Model.ID" method="post">
+                    <input type="hidden" name="ID" value="@Model.ID" />
+                    <div class="form-group">
+                        <label for="email">Status</label>
+                        <select class="form-control" id="Status" name="Status">
+                            <option value="Pending" @(Model.Status=="Pending"?"Selected":"")>Pending</option>
+                            <option value="Approved" @(Model.Status=="Approved"?"Selected":"")>Approved</option>
+                            <option value="Processing" @(Model.Status=="Processing"?"Selected":"")>Processing</option>
+                            <option value="Dispatched" @(Model.Status=="Dispatched"?"Selected":"")>Dispatched</option>
+                            <option value="Completed" @(Model.Status=="Completed"?"Selected":"")>Completed</option>
+                            <option value="Reject" @(Model.Status=="Reject"?"Selected":"")>Reject</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Comments:</label>
+                        <textarea class="form-control" id="Comments" name="Comments">@Model.Comments</textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Update Status</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

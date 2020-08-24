@@ -31,52 +31,53 @@
 
                                 @foreach (var price in Model.Prices.Where(a => a.IsActive == true).OrderBy(a => a.Price))
                                 {
-                                <div class="cheapest-store row">
-                                    <div class="col-xs-4 col-lg-4 logo">
-                                        @if (price.Store.Logo != null)
-                                        {
-                                            <img alt="@price.Store.Name" src="~/StoreLogos/@price.StoreId/@price.Store.Logo">
-                                        }
-                                        else
-                                        {
-                                            <span>@price.Store.Name</span>
-                                        }
+                                    <div class="cheapest-store row">
+                                        <div class="col-xs-4 col-lg-4 logo">
+                                            @if (price.Store.Logo != null)
+                                            {
+                                                <img alt="@price.Store.Name" src="~/StoreLogos/@price.StoreId/@price.Store.Logo">
+                                            }
+                                            else
+                                            {
+                                                <span>@price.Store.Name</span>
+                                            }
 
+                                        </div>
+                                        <div class="col-xs-4 col-lg-4 prices text-center">
+                                            <div class="price-current"><span>PKR </span>@price.Price</div>
+
+                                            @if (priceCount == 0)
+                                            {
+                                                <div class="best-tag">
+                                                    BEST PRICE
+                                                </div>
+                                            }
+
+                                        </div>
+                                        <div class="col-xs-4 col-lg-4 text-right">
+
+                                            @if (User.Identity.IsAuthenticated)
+                                            {
+                                                <a href="#BooknowPanel" class="btn btn-danger mb-2" onclick="BookNow(@price.ID)">
+                                                    Book Now
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                </a>
+                                            }
+                                            else
+                                            {
+                                                <a href="/account/login?returnUrl=/productdetail/?id=@Model.ID#bookstore=@price.ID" class="btn btn-danger mb-2">
+                                                    Book Now
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                </a>
+                                            }
+
+                                            <a href="/PriceClickHistory/Create/@price.ID?url=@price.Url" target="_blank" class="btn btn-info btn-sm ">
+                                                Go To Store
+                                                <i class="fa fa-right"></i>
+                                            </a>
+
+                                        </div>
                                     </div>
-                                    <div class="col-xs-4 col-lg-4 prices text-center">
-                                        <div class="price-current"><span>PKR </span>@price.Price</div>
-
-                                        @if (priceCount == 0)
-                                        {
-                                            <div class="best-tag">
-                                                BEST PRICE
-                                            </div>
-                                        }
-
-                                    </div>
-                                    <div class="col-xs-4 col-lg-4 text-right">
-
-                                        <button type="button" class="btn btn-danger mb-2">
-                                            Book Now
-                                            <i class="fa fa-shopping-cart"></i>
-                                        </button>
-
-                                        <a href="/PriceClickHistory/Create/@price.ID?url=@price.Url" target="_blank" class="btn btn-info btn-sm ">
-                                            Go To Store
-                                            <i class="fa fa-right"></i>
-                                        </a>
-                                        @*<div class="col-lg-4">
-                <div class="newslatter-item">
-                    <form action="/PriceClickHistory/Create" class="PriceClickHistory-form" method="post">
-                        <input type="text" name="ProductPriceId" required="" placeholder="Enter ProductPriceId">
-
-                        <button type="submit">Go To Store</button>
-                    </form>
-                </div>
-            </div>*@
-
-                                    </div>
-                                </div>
 
 
                                     priceCount++;
@@ -84,37 +85,91 @@
 
 
 
-                                    </div>
-                              
-                          
-                            <div class="product-tab">
-                                <div class="tab-item">
-                                    <ul class="nav" role="tablist">
-                                        <li>
-                                            <a class="active" data-toggle="tab" href="#tab-1" role="tab">DESCRIPTION</a>
-                                        </li>
+                            </div>
+
+                        </div>
+                    </div>
+                
 
 
-                                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="offset-lg-2 col-lg-8">
+                <div class="card" id="BooknowPanel">
+                    <div class="card-header text-white bg-success">
+                        <h5>Book Now (@Model.Name)</h5>
+                    </div>
+                    <div class="card-body">
+                        <form action="/productdetail/booking" method="post">
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <span>Choose Store</span>
+                                    <select class="form-control" id="ProductPriceId" name="ProductPriceId">
+                                        @foreach (var price in Model.Prices.Where(a => a.IsActive == true).OrderBy(a => a.Price))
+                                        {
+                                            <option value="@price.ID" >
+                                                @price.Store.Name.ToUpper()  - Price (@price.Price)
+                                            </option>
+                                        }
+                                    </select>
                                 </div>
-                                <div class="tab-item-content">
-                                    <div class="tab-content">
-                                        <div class="tab-pane fade-in active" id="tab-1" role="tabpanel">
-                                            <div class="product-content">
-                                                @if (!string.IsNullOrEmpty(Model.Description) && Model.Description != "NULL")
-                                                {
-                                                    @Html.Raw(Model.Description)
-                                                }
-                                            </div>
-                                        </div>
 
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <span>Name*</span>
+                                    <input type="text" class="form-control" placeholder="Name" id="Name" name="Name" required>
+                                </div>
 
-                                    </div>
+                                <div class="col">
+                                    <span>Email*</span>
+                                    <input type="text" class="form-control" readonly value="@User.Identity.Name" placeholder="Email" id="Email" name="Email" required>
                                 </div>
                             </div>
-                        
-                    
-              
-            
-        
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <span>Phone*</span>
+                                    <input type="text" class="form-control" placeholder="Phone" id="Phone" name="Phone" required>
+                                </div>
+                                <div class="col">
+                                    <span>Address*</span>
+                                    <input type="text" class="form-control" placeholder="Address" id="Address" name="Address"  required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <span>Quantity*</span> 
+                                    <input type="number" min="1" max="20" value="1" class="form-control" id="Quantity" name="Quantity" required placeholder="Quantity">
+                                </div>
+                                <div class="col">
+                                    <div>Agree & Click</div>
+
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+                                        <button type="submit" class="btn btn-danger">Confirm & Book Now</button>
+                                    }
+                                    else
+                                    {
+                                        <a href="/account/login?returnUrl=/productdetail/?id=@Model.ID#bookingpanel" class="btn btn-danger">Login to (Book Now)</a>
+                                    }
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
+
+@section scripts {
+    <script>
+        function BookNow(price) {
+            $("#ProductPriceId").val(price);
+        }
+    </script>
+    }

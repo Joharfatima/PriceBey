@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Booking Confirmed";
+}
+
+<section class="blog-details spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-details-inner">
+                    <div class="blog-detail-title">
+                        <h2>Your booking order has been posted..</h2>
+                        <p>BOOKING # <strong>  @Url.RequestContext.RouteData.Values["id"] </strong></p>
+                        <br />
+
+
+                    </div>
+
+                    <div class="blog-detail-title">
+                        <a href="/Customer/Bookings/Detail/@Url.RequestContext.RouteData.Values["id"]">
+                            <h3>Track Booking</h3>
+                        </a>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

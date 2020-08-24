@@ -1,0 +1,65 @@
+﻿@model IEnumerable<PriceBey.Models.ProductBooking>
+
+@{
+    ViewBag.Title = "My Bookings";
+}
+
+
+<section class="shopping-cart p-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="cart-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th class="p-name">Product Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+
+                                <tr>
+                                    <td class="cart-pic first-row">
+                                        <a href="/productdetail/?id=@item.ProductPrice.ProductId" target="_blank">
+                                            <img src="@item.ProductPrice.Product.Image" alt="" style="max-height:70px;">
+                                        </a>
+                                    </td>
+                                    <td class="cart-title first-row">
+                                        <a href="/productdetail/?id=@item.ProductPrice.ProductId" target="_blank">
+                                            <h5>
+                                                @item.ProductPrice.Product.Name
+                                            </h5>
+                                        </a>
+                                    </td>
+                                    <td class="p-price first-row"> RS. @item.ProductPrice.Price </td>
+                                    <td class="qua-col first-row">
+                                        @item.Quantity
+                                    </td>
+                                    <td class="p-price first-row"> RS.  @(Math.Round(item.ProductPrice.Price * item.Quantity, 2)) </td>
+                                    <td class="qua-col first-row">@item.Status</td>
+                                    <td class="close-td first-row">
+                                        <a href="/customer/bookings/Detail/@item.ID" class="btn btn-info btn-sm">
+                                            View Details
+                                        </a>
+                                    </td>
+                                </tr>
+
+                            }
+
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
