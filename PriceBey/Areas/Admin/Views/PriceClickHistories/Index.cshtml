@@ -1,39 +1,45 @@
 ﻿@model IEnumerable<PriceBey.Models.PriceClickHistory>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Click History";
 }
 
-<h2>Index</h2>
+<h1 class="h3 mb-2 text-gray-800">Click History</h1>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ProductPrice.Url)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedDate)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProductPrice.Url)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedDate)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
-}
+<div class="card shadow mb-4">
 
-</table>
+    <div class="card-body">
+        <div class="table-responsive">
+
+            <table class="table table-bordered" >
+                <tr>
+                    <th>
+                        URL
+                    </th>
+                    <th>
+                        Date
+                    </th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProductPrice.Url)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreatedDate)
+                        </td>
+
+                    </tr>
+                }
+
+            </table>
+
+            
+        </div>
+    </div>
+</div>
+
+

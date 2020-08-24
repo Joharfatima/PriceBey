@@ -1,0 +1,43 @@
+﻿@model PriceBey.Models.ProductBooking
+@{
+    ViewBag.Title = "Booking Detail";
+}
+
+<section class="checkout-section p-4">
+    <div class="container">
+        <form action="#" class="checkout-form">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="checkout-content">
+                       <a href="/Customer/Bookings"> <h3> <i class="fa fa-backward"></i> Back to Bookings Page</h3> </a>
+                    </div>
+                    <div class="place-order">
+                       
+                        <div class="order-total">
+                            <ul class="order-table mb-4">
+                                <li>Product <span>Total</span></li>
+
+                                <li class="fw-normal">@Model.ProductPrice.Product.Name x @Model.Quantity <span>RS. @Model.ProductPrice.Price</span></li>
+                                <li class="total-price">Total <span>RS.  @(Math.Round(Model.ProductPrice.Price * Model.Quantity, 2))</span></li>
+                            </ul>
+                            <div class="row mb-4">
+                                <div class="col-md-2">
+                                    <button type="button" disabled class="btn btn-primary">Status: <span class="badge">@Model.Status</span></button>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="alert alert-info">
+                                        <strong>Comments!</strong> @Model.Comments
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

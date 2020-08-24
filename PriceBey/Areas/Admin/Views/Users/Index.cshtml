@@ -1,0 +1,38 @@
+﻿@model IEnumerable<PriceBey.Models.ApplicationUser>
+@{
+    ViewBag.Title = "Users";
+}
+
+<h1 class="h3 mb-2 text-gray-800">Users</h1>
+
+
+<div class="card shadow mb-4">
+
+    <div class="card-body">
+        <div class="table-responsive">
+
+            <table class="table table-bordered">
+                <tr>
+                    <th>
+                        Email
+                    </th>
+                   
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                       
+
+                    </tr>
+                }
+
+            </table>
+
+
+        </div>
+    </div>
+</div>
