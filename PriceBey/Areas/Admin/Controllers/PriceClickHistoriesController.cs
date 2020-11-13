@@ -17,7 +17,7 @@ namespace PriceBey.Areas.Admin.Controllers
         // GET: Admin/PriceClickHistories
         public ActionResult Index()
         {
-            var priceClickHistory = db.PriceClickHistory.Include(p => p.ProductPrice);
+            var priceClickHistory = db.PriceClickHistory.Include(p => p.ProductPrice).OrderByDescending(p => p.ID);
             return View(priceClickHistory.ToList());
         }
 

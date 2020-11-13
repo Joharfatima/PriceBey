@@ -14,7 +14,7 @@ namespace PriceBey.Areas.Admin.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            var list = db.ProductBooking.Include("ProductPrice").Include("ProductPrice").Include("ProductPrice.Product");
+            var list = db.ProductBooking.Include("ProductPrice").Include("ProductPrice.Product");
 
             return View(list);
         }

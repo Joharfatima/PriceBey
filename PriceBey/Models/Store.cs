@@ -6,6 +6,8 @@ namespace PriceBey.Models
     {
         [Key]
         public int ID { get; set; }
+
+        [Required]
         public string Name { get; set; }
         public string Url { get; set; }
         public string Logo { get; set; }

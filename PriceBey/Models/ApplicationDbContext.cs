@@ -5,17 +5,11 @@ using System.Data.Entity;
 namespace PriceBey.Models
 {
 
-    [DbConfigurationType(typeof(MySql.Data.Entity.MySqlEFConfiguration))]
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        //public ApplicationDbContext()
-        //    : base("DefaultConnection", throwIfV1Schema: false)
-        //{
-        //}
-
         public ApplicationDbContext()
+            : base("DefaultConnection", throwIfV1Schema: false)
         {
-            Database.Connection.ConnectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
         }
 
         public static ApplicationDbContext Create()
@@ -40,5 +34,6 @@ namespace PriceBey.Models
         //{
         //    return new ApplicationDbContext();
         //}
+       
     }
 }

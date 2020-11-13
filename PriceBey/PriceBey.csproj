@@ -187,9 +187,13 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\BookingsController.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Admin\Controllers\PriceClickHistoriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsServiceController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SubscribersController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
+    <Compile Include="Areas\Customer\Controllers\BookingsController.cs" />
     <Compile Include="Areas\Customer\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Customer\CustomerAreaRegistration.cs" />
     <Compile Include="Controllers\AboutController.cs" />
@@ -198,26 +202,45 @@
     <Compile Include="Areas\Admin\Controllers\CategoriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\ColorsController.cs" />
     <Compile Include="Controllers\Api\ProductsController.cs" />
+    <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductPricesController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
-    <Compile Include="Controllers\PriceClickHistory.cs" />
+    <Compile Include="Controllers\PriceClickHistoryController.cs" />
     <Compile Include="Controllers\ProductDetailController.cs" />
     <Compile Include="Controllers\ProductsListController.cs" />
     <Compile Include="Areas\Admin\Controllers\StoresController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\SubscribeController.cs" />
     <Compile Include="Controllers\TermsController.cs" />
-    <Compile Include="DataContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202008201206233_ db.cs" />
     <Compile Include="Migrations\202008201206233_ db.Designer.cs">
       <DependentUpon>202008201206233_ db.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008241516349_aa.cs" />
+    <Compile Include="Migrations\202008241516349_aa.Designer.cs">
+      <DependentUpon>202008241516349_aa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010121517192_init.cs" />
+    <Compile Include="Migrations\202010121517192_init.Designer.cs">
+      <DependentUpon>202010121517192_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010121525313_init1.cs" />
+    <Compile Include="Migrations\202010121525313_init1.Designer.cs">
+      <DependentUpon>202010121525313_init1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010282056351_jia.cs" />
+    <Compile Include="Migrations\202010282056351_jia.Designer.cs">
+      <DependentUpon>202010282056351_jia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010282101065_ss.cs" />
+    <Compile Include="Migrations\202010282101065_ss.Designer.cs">
+      <DependentUpon>202010282101065_ss.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -228,6 +251,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductBooking.cs" />
     <Compile Include="Models\ProductPrice.cs" />
     <Compile Include="Models\Store.cs" />
     <Compile Include="Models\PriceClickHistory.cs" />
@@ -2176,6 +2200,10 @@
     <Content Include="Areas\Admin\Views\PriceClickHistories\Details.cshtml" />
     <Content Include="Areas\Admin\Views\PriceClickHistories\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\PriceClickHistories\Index.cshtml" />
+    <Content Include="Areas\Customer\Views\Bookings\Detail.cshtml" />
+    <Content Include="Areas\Customer\Views\Bookings\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Bookings\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\Bookings\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2303,6 +2331,21 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202008201206233_ db.resx">
       <DependentUpon>202008201206233_ db.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008241516349_aa.resx">
+      <DependentUpon>202008241516349_aa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010121517192_init.resx">
+      <DependentUpon>202010121517192_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010121525313_init1.resx">
+      <DependentUpon>202010121525313_init1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010282056351_jia.resx">
+      <DependentUpon>202010282056351_jia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010282101065_ss.resx">
+      <DependentUpon>202010282101065_ss.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

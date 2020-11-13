@@ -33,9 +33,12 @@ namespace PriceBey.Controllers
         public ActionResult Products(int id)
         {
             var data = db.Products.Include("Category").Include("Prices").Include("Prices.Store")
-                .Where(a => a.CategoryId == id && a.Prices.Count> 0 && a.Prices.Where(c=>c.IsActive
-                ==true).Any()).Take(8).ToList();
+                .Where(a => a.CategoryId == id 
+               && a.Prices.Count> 0 
+                && a.Prices.Where(c=>c.IsActive==true).Any()
+                ).Take(8).ToList();
 
+            // select * from products where categoryId = 1 and prices>0 and prices.isactive=true
             return PartialView("_Products", data);
         }
        

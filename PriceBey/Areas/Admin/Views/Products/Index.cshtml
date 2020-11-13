@@ -66,10 +66,20 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.IsActive)
                             </td>
-                            <td>
-                                @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-sm btn-primary mb-1" }) 
-                                @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-sm btn-info mb-1" }) 
+
+                        </tr>
+
+                        <tr>
+                            <td colspan="3">
+                                <strong> Active Prices: </strong> @item.Prices.Where(c => c.IsActive == true).Count()
+                                <strong> Other Prices: </strong> @item.Prices.Where(c => c.IsActive != true).Count()
+                            </td>
+                            <td colspan="4" class="text-right">
+
+                                @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-sm btn-primary mb-1" })
+                                @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-sm btn-info mb-1" })
                                 @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-sm btn-warning" })
+
                             </td>
                         </tr>
                     }

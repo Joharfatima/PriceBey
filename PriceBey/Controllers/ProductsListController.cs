@@ -24,9 +24,9 @@ namespace PriceBey.Controllers
 
         public ActionResult Brands()
         {
-            var data = db.Brands.Where(a => a.ID > 0);
+            var data = db.Brands.ToList();
 
-            return PartialView("_Brands", data.ToList());
+            return PartialView("_Brands", data);
         }
 
         public ActionResult Products()
@@ -57,6 +57,13 @@ namespace PriceBey.Controllers
                 var max = Convert.ToDecimal(Request.QueryString["max"]);
 
                 data = data.Where(a => a.Prices.Where(c=>c.Price >= min && c.Price <=max).Any());
+            }
+
+            if (Request.QueryString["q"] != null && !string.IsNullOrEmpty(Request.QueryString["q"]))
+            {
+                var q = Convert.ToString(Request.QueryString["q"]);
+
+                data = data.Where(a => a.Name.Contains(q));
             }
 
             return PartialView("_Products", data.ToList());

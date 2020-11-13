@@ -119,3 +119,8 @@ C:\Users\Dev\source\repos\PriceBey\PriceBey\bin\HtmlAgilityPack.xml
 C:\Users\Dev\source\repos\PriceBey\PriceBey\bin\WebDriver.xml
 C:\Users\Dev\source\repos\PriceBey\PriceBey\obj\Debug\PriceBey.Migrations.db.resources
 C:\Users\Dev\source\repos\PriceBey\PriceBey\obj\Debug\PriceBey.csproj.GenerateResource.cache
+C:\Users\Dev\source\repos\PriceBey\PriceBey\obj\Debug\PriceBey.Migrations.aa.resources
+C:\Users\Dev\source\repos\PriceBey\PriceBey\obj\Debug\PriceBey.Migrations.init.resources
+C:\Users\Dev\source\repos\PriceBey\PriceBey\obj\Debug\PriceBey.Migrations.init1.resources
+C:\Users\Dev\source\repos\PriceBey\PriceBey\obj\Debug\PriceBey.Migrations.jia.resources
+C:\Users\Dev\source\repos\PriceBey\PriceBey\obj\Debug\PriceBey.Migrations.ss.resources

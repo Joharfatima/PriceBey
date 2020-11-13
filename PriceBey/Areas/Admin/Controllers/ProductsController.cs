@@ -17,7 +17,7 @@ namespace PriceBey.Areas.Admin.Controllers
         // GET: Products
         public ActionResult Index()
         {
-            var products = db.Products.Include(p => p.Brand).Include(p => p.Category).Include(p => p.Color);
+            var products = db.Products.Include(p => p.Brand).Include(p => p.Category).Include(p => p.Color).Include(p=>p.Prices);
             return View(products.ToList());
         }
 

@@ -7,10 +7,18 @@ namespace PriceBey.Models
     {
         [Key]
         public int ID { get; set; }
+
+        [Required]
         public decimal Price { get; set; }
+
+        [Required]
         public string Url { get; set; }
+
+        [Required]
         public int ProductId { get; set; }
         public bool IsActive { get; set; }
+
+        [Required]
         public int StoreId { get; set; }
 
         [ForeignKey("ProductId")]

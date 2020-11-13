@@ -25,8 +25,7 @@ namespace PriceBey.Controllers
 
             Product product = db.Products.Include("Brand").Include("Category").Include("Prices")
                 .Include("Prices.Store")
-                .Where(a => a.ID == id && a.Prices.Where(c => c.IsActive
-                 == true).Count() > 0).Single();
+                .Where(a => a.ID == id && a.Prices.Where(c => c.IsActive == true).Count() > 0).Single();
 
             if (product == null)
             {
